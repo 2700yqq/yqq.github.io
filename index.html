@@ -160,16 +160,31 @@
 
         h1 {
             margin: 0;
-            font-size: clamp(44px, 8vw, 92px);
-            letter-spacing: -0.06em;
         }
 
-        .cn-name {
-            font-family: Georgia, "Times New Roman", serif;
-            letter-spacing: 0.24em;
+        .hero-name {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .name-en {
+            display: block;
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+            white-space: nowrap;
+        }
+
+        .name-cn {
+            display: block;
+            font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+            font-size: clamp(38px, 6vw, 72px);
+            line-height: 1.05;
+            letter-spacing: 0.18em;
             font-weight: 400;
             color: #f8d8c8;
-            margin-left: 8px;
         }
 
         .hero p {
@@ -627,7 +642,10 @@
             <div>
                 <div class="eyebrow" data-lang="en">C++ · Game Engineering · Technical Gameplay · Portfolio-ready Evidence</div>
                 <div class="eyebrow" data-lang="zh">C++ · 游戏工程 · 技术向玩法开发 · 作品集证据导向</div>
-                <h1>Yang Qianqi <span class="cn-name">杨千琪</span></h1>
+                <h1 class="hero-name">
+                    <span class="name-en">Yang Qianqi</span>
+                    <span class="name-cn">杨千琪</span>
+                </h1>
                 <p data-lang="en">MSc Game Engineering student at the University of Warwick WMG. This website is designed as a polished CV and portfolio hub: it links my CV, GitHub code, project screenshots, showreel evidence, development diary and technical contribution summaries.</p>
                 <p data-lang="zh">华威大学 WMG 游戏工程硕士在读。这个网站作为 polished CV + portfolio hub，集中展示我的 CV、GitHub 代码、项目截图、showreel、开发日志与技术贡献说明。</p>
                 <div class="hero-actions">
