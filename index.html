@@ -455,16 +455,16 @@
             flex-wrap: wrap;
         }
 
-        [data-lang="zh"] {
-            display: none;
+        body:not(.zh) [data-lang="zh"] {
+            display: none !important;
         }
 
         body.zh [data-lang="en"] {
-            display: none;
+            display: none !important;
         }
 
         body.zh [data-lang="zh"] {
-            display: revert;
+            display: revert !important;
         }
 
         @media (max-width: 980px) {
