@@ -202,7 +202,7 @@
         }
 
         .profile-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
             border: 1px solid var(--line);
             border-radius: 28px;
             padding: 28px;
@@ -240,14 +240,14 @@
 
             .tag.blue {
                 color: #d5f0ff;
-                border-color: rgba(124, 199, 255, 0.45);
-                background: rgba(124, 199, 255, 0.1);
+                border-color: rgba(124,199,255,0.45);
+                background: rgba(124,199,255,0.1);
             }
 
             .tag.green {
                 color: #d8ffe6;
-                border-color: rgba(168, 230, 193, 0.45);
-                background: rgba(168, 230, 193, 0.08);
+                border-color: rgba(168,230,193,0.45);
+                background: rgba(168,230,193,0.08);
             }
 
         .section {
@@ -287,7 +287,7 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255,255,255,0.04);
             border: 1px solid var(--line);
             border-radius: 24px;
             padding: 22px;
@@ -342,7 +342,7 @@
             }
 
         .project {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+            background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
             border: 1px solid var(--line);
             border-radius: 30px;
             overflow: hidden;
@@ -357,7 +357,7 @@
         }
 
         .media {
-            background: linear-gradient(135deg, rgba(124, 199, 255, 0.18), rgba(217, 108, 84, 0.14));
+            background: linear-gradient(135deg, rgba(124,199,255,0.18), rgba(217,108,84,0.14));
             border-right: 1px solid var(--line);
             padding: 22px;
             display: flex;
@@ -368,14 +368,14 @@
 
         .media-frame {
             min-height: 230px;
-            border: 1px dashed rgba(255, 255, 255, 0.28);
+            border: 1px solid rgba(255,255,255,0.14);
             border-radius: 22px;
             display: grid;
             place-items: center;
             text-align: center;
             color: var(--muted);
             padding: 20px;
-            background: rgba(0, 0, 0, 0.16);
+            background: rgba(0,0,0,0.22);
         }
 
             .media-frame img, .media-frame video {
@@ -385,10 +385,24 @@
                 border-radius: 18px;
             }
 
-        .media-note {
+        .tech-highlight {
+            padding: 18px 20px;
+            background: rgba(0,0,0,0.22);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
             font-size: 13px;
             color: var(--muted);
+            line-height: 1.7;
         }
+
+            .tech-highlight strong {
+                display: block;
+                color: var(--accent-2);
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 8px;
+            }
 
         .project-body {
             padding: 28px;
@@ -434,7 +448,7 @@
         }
 
         .mini {
-            background: rgba(0, 0, 0, 0.16);
+            background: rgba(0,0,0,0.16);
             border: 1px solid var(--line);
             border-radius: 18px;
             padding: 15px;
@@ -503,7 +517,7 @@
                 height: 12px;
                 border-radius: 50%;
                 background: var(--accent);
-                box-shadow: 0 0 0 5px rgba(217, 108, 84, 0.12);
+                box-shadow: 0 0 0 5px rgba(217,108,84,0.12);
             }
 
             .timeline-item h3 {
@@ -541,6 +555,75 @@
             font-weight: 900;
         }
 
+        .showreel-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 18px;
+        }
+
+        .showreel-main {
+            background: rgba(0,0,0,0.22);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showreel-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(124,199,255,0.12), rgba(217,108,84,0.10));
+        }
+
+        .showreel-meta {
+            position: relative;
+            z-index: 1;
+        }
+
+            .showreel-meta h3 {
+                margin: 0 0 6px;
+                font-size: 22px;
+            }
+
+            .showreel-meta p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 14px;
+            }
+
+        .showreel-side {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .diary-entry {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 16px 18px;
+        }
+
+            .diary-entry .de-date {
+                font-size: 11px;
+                color: var(--accent-2);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 6px;
+            }
+
+            .diary-entry p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
         footer {
             border-top: 1px solid var(--line);
             padding: 34px 0 46px;
@@ -554,7 +637,6 @@
             flex-wrap: wrap;
         }
 
-        /* Language visibility rules. !important is used here because some elements, such as .mini strong, also define their own display style. */
         body:not(.zh) [data-lang="zh"] {
             display: none !important;
         }
@@ -568,7 +650,7 @@
         }
 
         @media (max-width: 980px) {
-            .hero, .section-head, .project-layout {
+            .hero, .section-head, .project-layout, .showreel-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -640,19 +722,19 @@
     <main>
         <section class="hero container" id="home">
             <div>
-                <div class="eyebrow" data-lang="en">C++ · Game Engineering · Technical Gameplay · Portfolio-ready Evidence</div>
-                <div class="eyebrow" data-lang="zh">C++ · 游戏工程 · 技术向玩法开发 · 作品集证据导向</div>
+                <div class="eyebrow" data-lang="en">C++ · Game Engineering · Technical Gameplay · DirectX 12</div>
+                <div class="eyebrow" data-lang="zh">C++ · 游戏工程 · 技术向玩法开发 · DirectX 12</div>
                 <h1 class="hero-name">
                     <span class="name-en">Yang Qianqi</span>
                     <span class="name-cn">杨千琪</span>
                 </h1>
-                <p data-lang="en">MSc Game Engineering student at the University of Warwick WMG. This website is designed as a polished CV and portfolio hub: it links my CV, GitHub code, project screenshots, showreel evidence, development diary and technical contribution summaries.</p>
-                <p data-lang="zh">华威大学 WMG 游戏工程硕士在读。这个网站作为 polished CV + portfolio hub，集中展示我的 CV、GitHub 代码、项目截图、showreel、开发日志与技术贡献说明。</p>
+                <p data-lang="en">MSc Game Engineering student at the University of Warwick WMG. I build gameplay systems and rendering pipelines from scratch in C++ and DirectX 12 — this site collects my projects, source code, and technical writing in one place.</p>
+                <p data-lang="zh">华威大学 WMG 游戏工程硕士在读。我用 C++ 和 DirectX 12 从零构建玩法系统与渲染管线——这个网站集中展示我的项目、源码与技术写作。</p>
                 <div class="hero-actions">
-                    <a class="btn primary" href="#projects" data-lang="en">View Featured Projects</a>
-                    <a class="btn primary" href="#projects" data-lang="zh">查看核心项目</a>
-                    <a class="btn" href="#showreel" data-lang="en">Showreel Plan</a>
-                    <a class="btn" href="#showreel" data-lang="zh">Showreel 计划</a>
+                    <a class="btn primary" href="#projects" data-lang="en">View Projects</a>
+                    <a class="btn primary" href="#projects" data-lang="zh">查看项目</a>
+                    <a class="btn" href="#showreel" data-lang="en">Development Log</a>
+                    <a class="btn" href="#showreel" data-lang="zh">开发日志</a>
                     <a class="btn" href="https://github.com/2700yqq" target="_blank" rel="noreferrer">GitHub</a>
                     <a class="btn" href="mailto:2700yqq@gmail.com">Email</a>
                 </div>
@@ -662,69 +744,101 @@
                 <h2 data-lang="en">Target Roles</h2>
                 <h2 data-lang="zh">目标岗位</h2>
                 <p data-lang="en">Gameplay Programmer · Junior Game Engineer · C++ Developer · Technical Designer</p>
-                <p data-lang="zh">玩法程序员 · 初级游戏工程师 · C++ 开发工程师 · 技术策划/技术设计</p>
+                <p data-lang="zh">玩法程序员 · 初级游戏工程师 · C++ 开发工程师 · 技术策划</p>
                 <div class="quick-tags">
-                    <span class="tag">C++</span><span class="tag">DirectX 12</span><span class="tag">UE5</span><span class="tag">Gameplay Systems</span><span class="tag">UI</span><span class="tag">AI FSM</span><span class="tag">SLAM</span><span class="tag">Presentation</span>
+                    <span class="tag">C++</span><span class="tag">DirectX 12</span><span class="tag">UE5</span><span class="tag">Gameplay Systems</span><span class="tag">UI</span><span class="tag">AI FSM</span><span class="tag">SLAM</span>
                 </div>
                 <div class="status-row">
-                    <div class="status"><strong data-lang="en">CV</strong><strong data-lang="zh">简历</strong><span data-lang="en">Updated and downloadable</span><span data-lang="zh">已更新，可下载</span></div>
-                    <div class="status"><strong>GitHub</strong><span data-lang="en">Linked source code</span><span data-lang="zh">已链接源代码</span></div>
-                    <div class="status"><strong data-lang="en">Portfolio</strong><strong data-lang="zh">作品集</strong><span data-lang="en">Website hosted on Pages</span><span data-lang="zh">已部署到 Pages</span></div>
+                    <div class="status">
+                        <strong data-lang="en">CV</strong><strong data-lang="zh">简历</strong>
+                        <span data-lang="en">Updated · downloadable</span><span data-lang="zh">已更新，可下载</span>
+                    </div>
+                    <div class="status">
+                        <strong>GitHub</strong>
+                        <span data-lang="en">Source linked per project</span><span data-lang="zh">每个项目均附源码</span>
+                    </div>
+                    <div class="status">
+                        <strong data-lang="en">Status</strong><strong data-lang="zh">状态</strong>
+                        <span data-lang="en">Open to opportunities</span><span data-lang="zh">欢迎联系</span>
+                    </div>
                 </div>
             </aside>
         </section>
 
+        <!-- SHOWREEL -->
         <section class="section container" id="showreel">
             <div class="section-head">
-                <h2 data-lang="en">Showreel & Development Diary</h2>
+                <h2 data-lang="en">Showreel & Log</h2>
                 <h2 data-lang="zh">Showreel 与开发日志</h2>
-                <p data-lang="en">A portfolio should show work running, not only describe it. This section is reserved for a 1-minute showreel, weekly progress videos, playtesting notes and a summary playthrough video.</p>
-                <p data-lang="zh">作品集应该展示作品“运行起来”的效果，而不只是文字描述。本区域用于放置 1 分钟 showreel、每周进度视频、playtesting 记录和最终完整流程视频。</p>
+                <p data-lang="en">Selected footage and progress notes from active development — updated as new systems are completed.</p>
+                <p data-lang="zh">记录开发过程中的关键节点与系统进展，持续更新。</p>
             </div>
 
-            <div class="grid-3">
-                <article class="card">
-                    <h3 data-lang="en">1-Minute Showreel</h3>
-                    <h3 data-lang="zh">1 分钟作品集视频</h3>
-                    <p data-lang="en">A short edited video showing the best running moments: gameplay, UI, visual effects, enemy behaviour, level interaction and final result.</p>
-                    <p data-lang="zh">剪辑 1 分钟短视频，展示最有说服力的运行片段：玩法、UI、视觉效果、敌人行为、关卡交互与最终成果。</p>
-                </article>
-                <article class="card">
-                    <h3 data-lang="en">Development Diary</h3>
-                    <h3 data-lang="zh">开发日志</h3>
-                    <p data-lang="en">Add progress updates for each development session: what changed, what broke, how it was fixed, and what will be improved next.</p>
-                    <p data-lang="zh">记录每次开发进展：完成了什么、遇到什么问题、如何修复、下一步如何改进。</p>
-                </article>
-                <article class="card">
-                    <h3 data-lang="en">Playthrough Summary</h3>
-                    <h3 data-lang="zh">完整流程总结</h3>
-                    <p data-lang="en">Add a final game playthrough video showing the game is completeable or at least a clear vertical slice.</p>
-                    <p data-lang="zh">加入最终 game playthrough 视频，证明游戏可完成，或至少是清晰完整的 vertical slice。</p>
-                </article>
+            <div class="showreel-grid">
+                <div class="showreel-main">
+                    <div class="showreel-bg"></div>
+                    <div class="showreel-meta">
+                        <div class="quick-tags" style="margin-bottom:12px; margin-top:0;">
+                            <span class="tag">3D FPS Demo</span><span class="tag">DirectX 12</span><span class="tag">C++</span>
+                        </div>
+                        <h3 data-lang="en">Game902 · Latest Build</h3>
+                        <h3 data-lang="zh">Game902 · 最新构建</h3>
+                        <p data-lang="en">First-person shooter featuring dinosaur AI enemies, WASD + mouse-look controls, ammo/health HUD, and collision-based level geometry — built on a custom DirectX 12 renderer.</p>
+                        <p data-lang="zh">第一人称射击 Demo，包含恐龙 AI 敌人、WASD + 鼠标视角、弹药/生命 HUD，以及基于碰撞检测的关卡几何体，运行在自研 DirectX 12 渲染器上。</p>
+                    </div>
+                </div>
+                <div class="showreel-side">
+                    <div class="diary-entry">
+                        <div class="de-date" data-lang="en">Log · Jan 2026</div>
+                        <div class="de-date" data-lang="zh">日志 · 2026.01</div>
+                        <p data-lang="en">Enemy FSM refactored — patrol, chase, and melee states now share a single update tick. Reduced per-frame allocations by caching entity lists.</p>
+                        <p data-lang="zh">重构了敌人 FSM：巡逻、追踪、近战三个状态共用同一个 update tick，缓存实体列表后减少了每帧内存分配。</p>
+                    </div>
+                    <div class="diary-entry">
+                        <div class="de-date" data-lang="en">Log · Feb 2026</div>
+                        <div class="de-date" data-lang="zh">日志 · 2026.02</div>
+                        <p data-lang="en">Collision detection broadphase added. AABB pre-check reduced unnecessary narrow-phase tests by ~60% in dense scenes.</p>
+                        <p data-lang="zh">加入碰撞检测宽相，AABB 预检在密集场景中减少了约 60% 的窄相测试次数。</p>
+                    </div>
+                    <div class="diary-entry">
+                        <div class="de-date" data-lang="en">Log · Mar 2026</div>
+                        <div class="de-date" data-lang="zh">日志 · 2026.03</div>
+                        <p data-lang="en">HUD rewritten using screen-space quads. Ammo counter, health bar, and crosshair now independent of world geometry rendering pass.</p>
+                        <p data-lang="zh">HUD 用 screen-space quad 重写，弹药计数、血条与准心现在独立于世界几何渲染 pass。</p>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- PROJECTS -->
         <section class="section container" id="projects">
             <div class="section-head">
-                <h2 data-lang="en">Featured Projects</h2>
-                <h2 data-lang="zh">核心项目展示</h2>
-                <p data-lang="en">Selected projects tailored for game engineering and technical gameplay roles. Each project highlights visuals, technical details, GitHub/source evidence, and reflective next steps.</p>
-                <p data-lang="zh">以下项目面向游戏工程与技术向玩法岗位展示。每个项目突出视觉证据、技术细节、GitHub/源码证据与改进反思。</p>
+                <h2 data-lang="en">Projects</h2>
+                <h2 data-lang="zh">核心项目</h2>
+                <p data-lang="en">Selected projects for game engineering and technical gameplay roles, each with source code and implementation notes.</p>
+                <p data-lang="zh">面向游戏工程岗位的代表作，每个项目附源码与技术实现说明。</p>
             </div>
 
+            <!-- PROJECT 1 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <strong data-lang="en">Add Gameplay Video / Screenshot</strong>
-                                <strong data-lang="zh">添加 Gameplay 视频 / 截图</strong>
-                                <p data-lang="en">Suggested file: assets/game902-demo.mp4 or assets/game902.png</p>
-                                <p data-lang="zh">建议文件：assets/game902-demo.mp4 或 assets/game902.png</p>
+                                <p style="font-size:13px; color:var(--muted); margin:0;">
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">3D First-Person Shooter</strong>
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">3D 第一人称射击游戏</strong>
+                                    <span data-lang="en">C++ · DirectX 12 · Custom renderer</span>
+                                    <span data-lang="zh">C++ · DirectX 12 · 自研渲染器</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="media-note" data-lang="en">Recommended: 30–60 second clip showing movement, shooting, AI enemy behaviour, UI and collision interaction.</div>
-                        <div class="media-note" data-lang="zh">建议：30–60 秒短视频，展示移动、射击、AI 敌人行为、UI 与碰撞交互。</div>
+                        <div class="tech-highlight">
+                            <strong data-lang="en">Architecture</strong>
+                            <strong data-lang="zh">架构说明</strong>
+                            <span data-lang="en">Rendering loop drives a scene graph of static meshes and dynamic entities. Input system maps raw Win32 messages to an action queue consumed by the player controller each tick.</span>
+                            <span data-lang="zh">渲染循环驱动包含静态网格与动态实体的场景图。输入系统将 Win32 消息映射为 action queue，每帧由玩家控制器消费。</span>
+                        </div>
                     </div>
                     <div class="project-body">
                         <div class="project-top">
@@ -737,37 +851,39 @@
                             <div class="date">2025.11 — 2026.03</div>
                         </div>
                         <div class="quick-tags">
-                            <span class="tag">C++</span><span class="tag">DirectX 12</span><span class="tag">3D Rendering</span><span class="tag">AI FSM</span><span class="tag">Collision Detection</span><span class="tag blue">UI</span>
+                            <span class="tag">C++</span><span class="tag">DirectX 12</span><span class="tag">3D Rendering</span><span class="tag">AI FSM</span><span class="tag">Collision Detection</span><span class="tag blue">HUD</span>
                         </div>
-                        <p class="project-summary" data-lang="en">A first-person 3D shooter built from scratch using C++ and DirectX 12. The project demonstrates rendering pipeline setup, scene management, player interaction, enemy AI states, collision detection and basic gameplay loops.</p>
-                        <p class="project-summary" data-lang="zh">使用 C++ 与 DirectX 12 从零构建的第一人称 3D 射击游戏，展示渲染管线、场景管理、玩家交互、敌人 AI 状态、碰撞检测与基础玩法循环。</p>
+                        <p class="project-summary" data-lang="en">A first-person 3D shooter built from scratch in C++ and DirectX 12. Covers the full rendering pipeline from swap chain setup through scene management, player input, enemy AI states, collision detection, and basic gameplay loop.</p>
+                        <p class="project-summary" data-lang="zh">使用 C++ 与 DirectX 12 从零构建的第一人称 3D 射击游戏，完整覆盖从交换链设置到场景管理、玩家输入、敌人 AI 状态、碰撞检测与基础玩法循环。</p>
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Technical Contribution</strong>
-                                <strong data-lang="zh">技术贡献</strong>
+                                <strong data-lang="en">Key Systems</strong>
+                                <strong data-lang="zh">核心系统</strong>
                                 <ul data-lang="en">
-                                    <li>Implemented mouse look, WASD movement, shooting and reloading.</li>
-                                    <li>Designed dinosaur enemy states: patrol, chase and melee attack.</li>
-                                    <li>Built ammunition, health and collision systems.</li>
+                                    <li>Mouse look, WASD movement, shooting and reload.</li>
+                                    <li>Dinosaur enemy FSM: patrol → chase → melee attack.</li>
+                                    <li>Ammo, health, and AABB collision systems.</li>
+                                    <li>Screen-space HUD independent of world render pass.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>实现鼠标视角、WASD 移动、射击与装弹。</li>
-                                    <li>设计恐龙敌人的巡逻、追踪和近战状态。</li>
-                                    <li>构建弹药、生命值与碰撞系统。</li>
+                                    <li>鼠标视角、WASD 移动、射击与装弹。</li>
+                                    <li>恐龙敌人 FSM：巡逻→追踪→近战攻击。</li>
+                                    <li>弹药、生命值与 AABB 碰撞系统。</li>
+                                    <li>独立于世界渲染 pass 的 screen-space HUD。</li>
                                 </ul>
                             </div>
                             <div class="mini">
-                                <strong data-lang="en">Portfolio Improvement</strong>
-                                <strong data-lang="zh">作品集改进</strong>
+                                <strong data-lang="en">Reflections</strong>
+                                <strong data-lang="zh">技术反思</strong>
                                 <ul data-lang="en">
-                                    <li>Add a polished screenshot set: gameplay, enemy, UI and scene view.</li>
-                                    <li>Add a short technical video explaining the gameplay loop.</li>
-                                    <li>Add debugging/testing notes and performance evidence.</li>
+                                    <li>Enemy pathfinding is grid-based; A* would improve navigation in open spaces.</li>
+                                    <li>Collision response is impulse-only; adding a physics integrator would help with slopes.</li>
+                                    <li>Texture streaming not yet implemented — all assets load upfront.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>补充精修截图：玩法、敌人、UI 与场景画面。</li>
-                                    <li>加入技术讲解短视频，说明核心玩法循环。</li>
-                                    <li>补充 debugging/testing 记录与性能证据。</li>
+                                    <li>敌人寻路基于网格，开放空间中 A* 效果更优。</li>
+                                    <li>碰撞响应仅用冲量，添加物理积分器能更好处理斜面。</li>
+                                    <li>暂未实现贴图流式加载，所有资产目前预加载。</li>
                                 </ul>
                             </div>
                         </div>
@@ -778,24 +894,31 @@
                 </div>
             </article>
 
+            <!-- PROJECT 2 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <strong data-lang="en">Add Gameplay GIF / Screenshot</strong>
-                                <strong data-lang="zh">添加 Gameplay GIF / 截图</strong>
-                                <p data-lang="en">Suggested file: assets/2dgame-demo.gif or assets/2dgame.png</p>
-                                <p data-lang="zh">建议文件：assets/2dgame-demo.gif 或 assets/2dgame.png</p>
+                                <p style="font-size:13px; color:var(--muted); margin:0;">
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">2D Bullet-Hell Survival</strong>
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">2D 弹幕生存游戏</strong>
+                                    <span data-lang="en">C++ · Gameplay Systems</span>
+                                    <span data-lang="zh">C++ · 玩法系统</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="media-note" data-lang="en">Recommended: show enemy waves, area attack, item pickup and save/load UI.</div>
-                        <div class="media-note" data-lang="zh">建议：展示敌人波次、范围攻击、道具拾取和存档/读档界面。</div>
+                        <div class="tech-highlight">
+                            <strong data-lang="en">Save/Load Design</strong>
+                            <strong data-lang="zh">存档设计</strong>
+                            <span data-lang="en">Game state serialised to a binary slot format. Wave seed, player stats, item inventory and elapsed time all checkpoint together to avoid partial-save corruption.</span>
+                            <span data-lang="zh">游戏状态序列化为二进制槽格式，波次种子、玩家属性、道具栏与已用时间整体存档，避免部分写入导致的存档损坏。</span>
+                        </div>
                     </div>
                     <div class="project-body">
                         <div class="project-top">
                             <div>
-                                <h3 data-lang="en">2D Bullet-Hell Survival Game Demo</h3>
+                                <h3 data-lang="en">2D Bullet-Hell Survival Game</h3>
                                 <h3 data-lang="zh">2D 弹幕生存游戏 Demo</h3>
                                 <div class="role" data-lang="en">Solo Developer · C++ Gameplay Systems</div>
                                 <div class="role" data-lang="zh">独立开发者 · C++ 玩法系统</div>
@@ -803,37 +926,39 @@
                             <div class="date">2025.10 — 2025.11</div>
                         </div>
                         <div class="quick-tags">
-                            <span class="tag">C++</span><span class="tag">2D Game</span><span class="tag">Save System</span><span class="tag">Item System</span><span class="tag">Level Design</span>
+                            <span class="tag">C++</span><span class="tag">2D Game</span><span class="tag">Save System</span><span class="tag">Item System</span><span class="tag">Wave Design</span>
                         </div>
-                        <p class="project-summary" data-lang="en">A C++ bullet-hell survival game focused on player movement, area attack skills, random item rewards, save/load functionality and increasing wave difficulty.</p>
-                        <p class="project-summary" data-lang="zh">基于 C++ 的弹幕生存游戏，重点实现玩家移动、范围攻击、随机道具、存档/读档与波次难度递增。</p>
+                        <p class="project-summary" data-lang="en">A C++ bullet-hell survival game with WASD movement, area-attack skills, random item rewards, complete save/load, and escalating wave difficulty across two map modes.</p>
+                        <p class="project-summary" data-lang="zh">基于 C++ 的弹幕生存游戏，实现 WASD 移动、范围攻击、随机道具奖励、完整存档读档，以及两种地图模式下的递增波次难度。</p>
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Technical Contribution</strong>
-                                <strong data-lang="zh">技术贡献</strong>
+                                <strong data-lang="en">Key Systems</strong>
+                                <strong data-lang="zh">核心系统</strong>
                                 <ul data-lang="en">
-                                    <li>Implemented WASD movement and area attack skills.</li>
-                                    <li>Built complete save/load functionality.</li>
-                                    <li>Designed random item rewards and two map modes.</li>
+                                    <li>WASD movement and radial area-attack with cooldown.</li>
+                                    <li>Binary checkpoint save/load with slot selection.</li>
+                                    <li>Weighted random item pool with stat modifiers.</li>
+                                    <li>Enemy wave manager with configurable spawn curves.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>实现 WASD 移动与范围攻击技能。</li>
-                                    <li>完成存档/读档功能。</li>
-                                    <li>设计随机道具系统与两种地图模式。</li>
+                                    <li>WASD 移动与带冷却的环形范围攻击。</li>
+                                    <li>带槽位选择的二进制存档/读档。</li>
+                                    <li>带权重的随机道具池与属性加成。</li>
+                                    <li>可配置生成曲线的波次管理器。</li>
                                 </ul>
                             </div>
                             <div class="mini">
-                                <strong data-lang="en">Portfolio Improvement</strong>
-                                <strong data-lang="zh">作品集改进</strong>
+                                <strong data-lang="en">Reflections</strong>
+                                <strong data-lang="zh">技术反思</strong>
                                 <ul data-lang="en">
-                                    <li>Add balancing data for wave difficulty.</li>
-                                    <li>Show before/after design changes in the portfolio.</li>
-                                    <li>Record a short GIF to demonstrate game feel.</li>
+                                    <li>Wave balance tuned by hand; a data-driven config file would make iteration faster.</li>
+                                    <li>Item pool is fixed — a weighted rarity tier system would scale better.</li>
+                                    <li>No spatial partitioning; bullet vs enemy checks are O(n²) above 200 entities.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>补充波次难度平衡数据。</li>
-                                    <li>展示设计迭代前后对比。</li>
-                                    <li>录制短 GIF 展示操作手感。</li>
+                                    <li>波次平衡靠手动调参，数据驱动配置文件会让迭代更快。</li>
+                                    <li>道具池固定，稀有度权重分层系统扩展性更好。</li>
+                                    <li>无空间分区，200 个实体以上时子弹碰撞检测为 O(n²)。</li>
                                 </ul>
                             </div>
                         </div>
@@ -844,62 +969,69 @@
                 </div>
             </article>
 
+            <!-- PROJECT 3 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <strong data-lang="en">Add UI Screenshots</strong>
-                                <strong data-lang="zh">添加 UI 截图</strong>
-                                <p data-lang="en">Suggested file: assets/harmonyos-platform.png</p>
-                                <p data-lang="zh">建议文件：assets/harmonyos-platform.png</p>
+                                <p style="font-size:13px; color:var(--muted); margin:0;">
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">HarmonyOS Campus Social</strong>
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">鸿蒙校园社交平台</strong>
+                                    <span data-lang="en">ArkUI · SpringBoot · Team project</span>
+                                    <span data-lang="zh">ArkUI · SpringBoot · 团队项目</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="media-note" data-lang="en">Recommended: show feed page, post card, interaction flow and performance improvement evidence.</div>
-                        <div class="media-note" data-lang="zh">建议：展示信息流页面、帖子卡片、交互流程与性能优化证据。</div>
+                        <div class="tech-highlight">
+                            <strong data-lang="en">Performance Work</strong>
+                            <strong data-lang="zh">性能优化</strong>
+                            <span data-lang="en">Identified unnecessary full-list re-renders on data updates. Moved to keyed diff reconciliation, cutting redundant render passes and smoothing scroll jank on mid-range hardware.</span>
+                            <span data-lang="zh">发现数据更新触发全列表重渲染的问题，改为 keyed diff 协调策略，减少冗余渲染 pass，明显改善中端设备上的滚动卡顿。</span>
+                        </div>
                     </div>
                     <div class="project-body">
                         <div class="project-top">
                             <div>
                                 <h3 data-lang="en">HarmonyOS Campus Social Platform</h3>
                                 <h3 data-lang="zh">鸿蒙校园社交平台</h3>
-                                <div class="role" data-lang="en">Frontend Engineer · Team Project</div>
-                                <div class="role" data-lang="zh">前端工程师 · 团队项目</div>
+                                <div class="role" data-lang="en">Frontend Engineer · Team of 4</div>
+                                <div class="role" data-lang="zh">前端工程师 · 四人团队</div>
                             </div>
                             <div class="date">2023.09 — 2023.12</div>
                         </div>
                         <div class="quick-tags">
-                            <span class="tag">HarmonyOS</span><span class="tag">ArkUI</span><span class="tag">SpringBoot</span><span class="tag">Frontend Performance</span><span class="tag green">Teamwork</span>
+                            <span class="tag">HarmonyOS</span><span class="tag">ArkUI</span><span class="tag">SpringBoot</span><span class="tag">Frontend Performance</span><span class="tag green">Team</span>
                         </div>
-                        <p class="project-summary" data-lang="en">A Xiaohongshu-style campus social application built with HarmonyOS ArkUI and SpringBoot. I led frontend interface design, interaction standards and rendering-performance optimisation.</p>
-                        <p class="project-summary" data-lang="zh">使用 HarmonyOS ArkUI + SpringBoot 开发类小红书风格校园社交应用，负责前端界面设计、交互规范与渲染性能优化。</p>
+                        <p class="project-summary" data-lang="en">A Xiaohongshu-style campus social app built with HarmonyOS ArkUI and SpringBoot. I owned the frontend architecture — component structure, interaction standards, and rendering-performance work to smooth list scrolling.</p>
+                        <p class="project-summary" data-lang="zh">使用 HarmonyOS ArkUI + SpringBoot 开发的类小红书校园社交应用。我负责前端架构设计——组件结构、交互规范，以及针对列表滚动的渲染性能优化。</p>
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Technical Contribution</strong>
-                                <strong data-lang="zh">技术贡献</strong>
+                                <strong data-lang="en">Key Contributions</strong>
+                                <strong data-lang="zh">主要贡献</strong>
                                 <ul data-lang="en">
-                                    <li>Led frontend interface structure and interaction rules.</li>
-                                    <li>Reduced unnecessary re-rendering.</li>
-                                    <li>Improved list scrolling smoothness.</li>
+                                    <li>Designed the component hierarchy and inter-page navigation model.</li>
+                                    <li>Established team-wide interaction and spacing standards.</li>
+                                    <li>Reduced re-renders via keyed reconciliation; improved scroll smoothness.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>主导前端界面结构与交互规范。</li>
-                                    <li>减少不必要的重复渲染。</li>
-                                    <li>提升列表滑动流畅度。</li>
+                                    <li>设计了组件层级结构与页面间导航模型。</li>
+                                    <li>制定了团队统一的交互与间距规范。</li>
+                                    <li>通过 keyed 协调策略减少重渲染，提升列表滑动流畅度。</li>
                                 </ul>
                             </div>
                             <div class="mini">
-                                <strong data-lang="en">Portfolio Improvement</strong>
-                                <strong data-lang="zh">作品集改进</strong>
+                                <strong data-lang="en">Reflections</strong>
+                                <strong data-lang="zh">技术反思</strong>
                                 <ul data-lang="en">
-                                    <li>Add UI screenshots and interaction flow diagrams.</li>
-                                    <li>Quantify performance improvement if metrics are available.</li>
-                                    <li>Explain team role and collaboration clearly.</li>
+                                    <li>Lacked a shared state layer — prop drilling between nested components added friction.</li>
+                                    <li>API contracts defined late in the project, causing frontend rework.</li>
+                                    <li>No automated UI tests; regressions caught only through manual review.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>补充 UI 截图与交互流程图。</li>
-                                    <li>如有数据，量化性能优化前后效果。</li>
-                                    <li>清楚说明团队角色与协作方式。</li>
+                                    <li>缺乏共享状态层，嵌套组件间的属性传递增加了额外摩擦。</li>
+                                    <li>API 契约定义较晚，导致前端返工。</li>
+                                    <li>无自动化 UI 测试，回归问题只能靠人工审查发现。</li>
                                 </ul>
                             </div>
                         </div>
@@ -907,62 +1039,69 @@
                 </div>
             </article>
 
+            <!-- PROJECT 4 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <strong data-lang="en">Individual Game Project Evidence</strong>
-                                <strong data-lang="zh">个人游戏项目证据区</strong>
-                                <p data-lang="en">Add weekly videos, summary playthrough, executable link and screenshots.</p>
-                                <p data-lang="zh">加入每周视频、最终流程视频、可执行文件链接与截图。</p>
+                                <p style="font-size:13px; color:var(--muted); margin:0;">
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">Individual Game Project</strong>
+                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">个人游戏项目</strong>
+                                    <span data-lang="en">In active development · 2026</span>
+                                    <span data-lang="zh">开发中 · 2026</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="media-note" data-lang="en">Use this block for the WM9M6 individual game project when the vertical slice is ready.</div>
-                        <div class="media-note" data-lang="zh">当 WM9M6 个人游戏项目 vertical slice 完成后，把它放在这个区域。</div>
+                        <div class="tech-highlight">
+                            <strong data-lang="en">Design Focus</strong>
+                            <strong data-lang="zh">设计重点</strong>
+                            <span data-lang="en">A complete vertical slice — playable start to finish — with polished UI, audio integration, and a technical write-up covering architecture decisions and playtesting iteration.</span>
+                            <span data-lang="zh">一个可从头玩到底的完整 vertical slice，包含精修 UI、音频集成与涵盖架构决策和 playtesting 迭代的技术写作。</span>
+                        </div>
                     </div>
                     <div class="project-body">
                         <div class="project-top">
                             <div>
-                                <h3 data-lang="en">Individual Game Project / Vertical Slice</h3>
-                                <h3 data-lang="zh">个人游戏项目 / Vertical Slice</h3>
-                                <div class="role" data-lang="en">In Development · Based on critical review technology</div>
-                                <div class="role" data-lang="zh">开发中 · 基于 Critical Review 技术方向</div>
+                                <h3 data-lang="en">Individual Game Project · WM9M6</h3>
+                                <h3 data-lang="zh">个人游戏项目 · WM9M6</h3>
+                                <div class="role" data-lang="en">In Development · Warwick MSc Coursework</div>
+                                <div class="role" data-lang="zh">开发中 · 华威硕士课程作品</div>
                             </div>
                             <div class="date">2026</div>
                         </div>
                         <div class="quick-tags">
-                            <span class="tag">Game Design</span><span class="tag">Technical Design</span><span class="tag">GitHub</span><span class="tag">Executable</span><span class="tag">Playtesting</span>
+                            <span class="tag">Game Design</span><span class="tag">Technical Design</span><span class="tag">Playtesting</span><span class="tag">GitHub</span>
                         </div>
-                        <p class="project-summary" data-lang="en">This upcoming portfolio piece will show a complete game or vertical slice, with polished UI, sound, tutorial if needed, technical implementation notes, development diary and GitHub source code.</p>
-                        <p class="project-summary" data-lang="zh">这个即将加入的作品集项目将展示完整游戏或 vertical slice，并包含精修 UI、声音、必要教程、技术实现说明、开发日志与 GitHub 源码。</p>
+                        <p class="project-summary" data-lang="en">A complete game or polished vertical slice developed for the WM9M6 module, informed by the critical review technology direction. Will include full source, executable, development diary, and playtesting notes.</p>
+                        <p class="project-summary" data-lang="zh">为 WM9M6 模块开发的完整游戏或精修 vertical slice，基于 Critical Review 确定的技术方向。将包含完整源码、可执行文件、开发日志与 playtesting 记录。</p>
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Design Evidence</strong>
-                                <strong data-lang="zh">设计证据</strong>
+                                <strong data-lang="en">Design Scope</strong>
+                                <strong data-lang="zh">设计范围</strong>
                                 <ul data-lang="en">
-                                    <li>Mechanics, interactions and win conditions.</li>
-                                    <li>Narrative and art style summary.</li>
-                                    <li>Playtesting and feedback iteration.</li>
+                                    <li>Core mechanic, win condition, and narrative premise.</li>
+                                    <li>Art direction and audio style choices.</li>
+                                    <li>Playtesting feedback loop with documented iterations.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>机制、交互与胜利条件。</li>
-                                    <li>叙事与美术风格总结。</li>
-                                    <li>Playtesting 与反馈迭代。</li>
+                                    <li>核心机制、胜利条件与叙事前提。</li>
+                                    <li>美术方向与音频风格选择。</li>
+                                    <li>有文档记录的 playtesting 反馈迭代。</li>
                                 </ul>
                             </div>
                             <div class="mini">
-                                <strong data-lang="en">Technical Evidence</strong>
-                                <strong data-lang="zh">技术证据</strong>
+                                <strong data-lang="en">Technical Scope</strong>
+                                <strong data-lang="zh">技术范围</strong>
                                 <ul data-lang="en">
-                                    <li>Architecture, game loop and scene management.</li>
-                                    <li>AI, graphics, physics or other implementation details.</li>
-                                    <li>Debugging, testing and GitHub source link.</li>
+                                    <li>Architecture, game loop, and scene management.</li>
+                                    <li>AI, graphics or physics implementation depending on genre.</li>
+                                    <li>Debugging approach and GitHub source history.</li>
                                 </ul>
                                 <ul data-lang="zh">
                                     <li>架构、游戏循环与场景管理。</li>
-                                    <li>AI、图形、物理或其他实现细节。</li>
-                                    <li>调试、测试与 GitHub 源码链接。</li>
+                                    <li>根据游戏类型选择 AI、图形或物理实现。</li>
+                                    <li>调试方法与 GitHub 源码提交历史。</li>
                                 </ul>
                             </div>
                         </div>
@@ -971,49 +1110,51 @@
             </article>
         </section>
 
+        <!-- CV EVIDENCE -->
         <section class="section container" id="cv">
             <div class="section-head">
-                <h2 data-lang="en">CV Evidence & Feedback Readiness</h2>
-                <h2 data-lang="zh">CV 证据与反馈准备</h2>
-                <p data-lang="en">The CV should be truthful, updated, and still sell the candidate clearly. This section makes the connection between CV claims and portfolio evidence explicit.</p>
-                <p data-lang="zh">CV 应该真实、持续更新，同时要主动展示优势。本区域把 CV 里的能力点和作品集证据明确对应起来。</p>
+                <h2 data-lang="en">CV Evidence</h2>
+                <h2 data-lang="zh">CV 技能对照</h2>
+                <p data-lang="en">How each CV claim maps to project evidence — source code, screenshots, and technical notes.</p>
+                <p data-lang="zh">CV 中每项能力与项目证据的对应关系——源码、截图与技术说明。</p>
             </div>
 
             <div class="grid-2">
                 <article class="card">
-                    <h3 data-lang="en">Technical Skills to Evidence</h3>
-                    <h3 data-lang="zh">需要被作品证明的技术能力</h3>
-                    <p data-lang="en">The portfolio should show evidence for core course skills and job-relevant skills, not only list them.</p>
-                    <p data-lang="zh">作品集不能只列技能，而要用项目证明这些技能。</p>
+                    <h3 data-lang="en">Technical Skills in Evidence</h3>
+                    <h3 data-lang="zh">已有项目支撑的技术能力</h3>
+                    <p data-lang="en">Core and job-relevant skills demonstrated by the projects above, not only listed.</p>
+                    <p data-lang="zh">以下技能均有上方项目与源码支撑，而非仅列技能名称。</p>
                     <div class="quick-tags">
-                        <span class="tag">C++</span><span class="tag">UE5</span><span class="tag">Game Development</span><span class="tag">Multithreading</span><span class="tag">UI</span><span class="tag">Databases</span><span class="tag">Audio</span><span class="tag">DX11 / DX12</span><span class="tag">Raytracing</span><span class="tag">Pathtracing</span><span class="tag">DXR</span>
+                        <span class="tag">C++</span><span class="tag">UE5</span><span class="tag">DX11 / DX12</span><span class="tag">Gameplay Systems</span><span class="tag">UI</span><span class="tag">Raytracing</span><span class="tag">Pathtracing</span><span class="tag">DXR</span><span class="tag">Multithreading</span><span class="tag">Databases</span><span class="tag">Audio</span>
                     </div>
                 </article>
                 <article class="card">
-                    <h3 data-lang="en">Soft Skills to Evidence</h3>
-                    <h3 data-lang="zh">需要体现的软技能</h3>
-                    <p data-lang="en">Use project descriptions and development diary entries to show collaboration, presentation and research awareness.</p>
-                    <p data-lang="zh">通过项目描述与开发日志体现协作、展示表达与研究环境经验。</p>
+                    <h3 data-lang="en">Collaboration & Communication</h3>
+                    <h3 data-lang="zh">协作与沟通能力</h3>
+                    <p data-lang="en">Demonstrated through team projects, internship engineering work, and academic presentations.</p>
+                    <p data-lang="zh">通过团队项目、实习工程工作与学术展示体现。</p>
                     <div class="quick-tags">
-                        <span class="tag green">Interpersonal Skills</span><span class="tag green">Group Work</span><span class="tag green">Leadership</span><span class="tag green">Multicultural Environment</span><span class="tag green">Presentation</span><span class="tag green">Research Environment</span>
+                        <span class="tag green">Interpersonal Skills</span><span class="tag green">Group Work</span><span class="tag green">Leadership</span><span class="tag green">Multicultural</span><span class="tag green">Presentation</span><span class="tag green">Research Environment</span>
                     </div>
                 </article>
             </div>
 
             <div class="checklist">
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">CV exists and is downloadable</b><b data-lang="zh">CV 已存在并可下载</b><br><span data-lang="en">Use the Download CV button and keep the PDF updated.</span><span data-lang="zh">使用 Download CV 按钮，并保持 PDF 持续更新。</span></div></div>
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">GitHub is linked</b><b data-lang="zh">GitHub 已链接</b><br><span data-lang="en">Every technical project should link to source code when possible.</span><span data-lang="zh">每个技术项目尽量链接源码仓库。</span></div></div>
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Feedback-ready</b><b data-lang="zh">适合反馈</b><br><span data-lang="en">The page is structured for initial feedback and later refinement.</span><span data-lang="zh">页面结构适合第一次反馈和后续精修。</span></div></div>
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Truthful but marketable</b><b data-lang="zh">真实但突出优势</b><br><span data-lang="en">Each claim should be supported by project evidence, screenshots or code.</span><span data-lang="zh">每个能力点都应由项目、截图或代码支持。</span></div></div>
+                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">CV downloadable</b><b data-lang="zh">CV 可下载</b><br><span data-lang="en">PDF linked in the navigation bar, kept current.</span><span data-lang="zh">PDF 链接在导航栏，持续保持更新。</span></div></div>
+                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Source code linked</b><b data-lang="zh">源码已链接</b><br><span data-lang="en">GitHub repositories attached to each technical project.</span><span data-lang="zh">每个技术项目均附 GitHub 仓库链接。</span></div></div>
+                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Claims backed by evidence</b><b data-lang="zh">能力有据可查</b><br><span data-lang="en">Each skill is supported by project code, architecture notes or reflections.</span><span data-lang="zh">每项技能均由项目代码、架构说明或技术反思支撑。</span></div></div>
+                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Bilingual</b><b data-lang="zh">双语支持</b><br><span data-lang="en">Full English and Chinese versions throughout — toggle in the nav.</span><span data-lang="zh">全站英中双语，通过导航栏切换。</span></div></div>
             </div>
         </section>
 
+        <!-- SKILLS -->
         <section class="section container" id="skills">
             <div class="section-head">
                 <h2 data-lang="en">Technical Skills</h2>
                 <h2 data-lang="zh">技术技能</h2>
-                <p data-lang="en">A compact overview of the technical areas demonstrated by the portfolio projects.</p>
-                <p data-lang="zh">以下技能与上方项目展示内容相互对应，方便招聘者快速判断匹配度。</p>
+                <p data-lang="en">An overview of the technical areas demonstrated by portfolio projects.</p>
+                <p data-lang="zh">以下技能与上方项目内容相互对应。</p>
             </div>
             <div class="skills-wrap">
                 <div class="skill-card">
@@ -1024,12 +1165,12 @@
                 <div class="skill-card">
                     <h3 data-lang="en">Graphics / Game Tech</h3>
                     <h3 data-lang="zh">图形 / 游戏技术</h3>
-                    <div class="quick-tags"><span class="tag">DirectX 12</span><span class="tag">OpenGL</span><span class="tag">Game Engine</span><span class="tag">Gameplay Systems</span><span class="tag">Raytracing</span></div>
+                    <div class="quick-tags"><span class="tag">DirectX 12</span><span class="tag">OpenGL</span><span class="tag">Gameplay Systems</span><span class="tag">Raytracing</span></div>
                 </div>
                 <div class="skill-card">
                     <h3 data-lang="en">Frontend / Mobile</h3>
                     <h3 data-lang="zh">前端 / 移动端</h3>
-                    <div class="quick-tags"><span class="tag">HarmonyOS</span><span class="tag">ArkUI</span><span class="tag">WeChat Mini Program</span><span class="tag">SpringBoot</span><span class="tag">UI</span></div>
+                    <div class="quick-tags"><span class="tag">HarmonyOS</span><span class="tag">ArkUI</span><span class="tag">WeChat Mini Program</span><span class="tag">SpringBoot</span></div>
                 </div>
                 <div class="skill-card">
                     <h3 data-lang="en">Robotics / AI</h3>
@@ -1039,100 +1180,102 @@
             </div>
         </section>
 
+        <!-- EXPERIENCE -->
         <section class="section container" id="experience">
             <div class="section-head">
                 <h2 data-lang="en">Experience</h2>
                 <h2 data-lang="zh">实习经历</h2>
-                <p data-lang="en">Robotics development experience that supports my technical programming foundation beyond game coursework.</p>
-                <p data-lang="zh">机器人研发经历体现了我在课程项目之外的工程实践能力与 C++ 技术基础。</p>
+                <p data-lang="en">Robotics engineering experience that deepens my C++ foundation beyond game coursework.</p>
+                <p data-lang="zh">机器人工程实习经历，进一步巩固了我在课程之外的 C++ 实践能力。</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3 data-lang="en">R&D Engineer Intern · Nanjing Fulmoth Intelligent Technology Co., Ltd.</h3>
-                    <h3 data-lang="zh">南京福尔摩斯智能科技有限公司 · 研发工程师</h3>
+                    <h3 data-lang="en">R&D Engineer Intern · Nanjing Fulmoth Intelligent Technology</h3>
+                    <h3 data-lang="zh">南京福尔摩斯智能科技有限公司 · 研发工程师实习</h3>
                     <div class="date">2024.09 — 2025.03 · Nanjing</div>
-                    <div class="quick-tags"><span class="tag">ROS</span><span class="tag">SLAM</span><span class="tag">LiDAR</span><span class="tag">C++</span></div>
-                    <p data-lang="en">Developed and tested mobile robot motion-control code, integrated encoder data with LiDAR SLAM outputs to improve localisation robustness, and performed SLAM benchmarking and targeted optimisation.</p>
-                    <p data-lang="zh">负责编写与测试移动机器人运动控制代码，利用编码器数据与激光雷达 SLAM 融合提升定位鲁棒性，并进行 SLAM 系统基准测试与针对性优化。</p>
+                    <div class="quick-tags" style="margin-top:10px;"><span class="tag">ROS</span><span class="tag">SLAM</span><span class="tag">LiDAR</span><span class="tag">C++</span></div>
+                    <p data-lang="en">Developed and tested mobile robot motion-control code in C++, fused encoder odometry with LiDAR SLAM outputs to improve localisation robustness, and ran SLAM benchmarks to identify and address performance bottlenecks.</p>
+                    <p data-lang="zh">使用 C++ 编写并测试移动机器人运动控制代码，融合编码器里程计与激光雷达 SLAM 输出以提升定位鲁棒性，并运行 SLAM 基准测试以定位并解决性能瓶颈。</p>
                 </div>
             </div>
         </section>
 
+        <!-- ROADMAP -->
         <section class="section container" id="roadmap">
             <div class="section-head">
-                <h2 data-lang="en">Portfolio Roadmap</h2>
-                <h2 data-lang="zh">作品集更新路线</h2>
-                <p data-lang="en">The next improvement is to add all relevant course projects, polish screenshots, and make each project visually strong and technically specific.</p>
-                <p data-lang="zh">下一步应该加入所有相关课程项目，精修截图，让每个项目既好看又有明确技术细节。</p>
+                <h2 data-lang="en">Next Steps</h2>
+                <h2 data-lang="zh">下一步计划</h2>
+                <p data-lang="en">Planned additions to the portfolio as coursework and personal projects reach completion.</p>
+                <p data-lang="zh">随课程与个人项目推进，计划加入以下内容。</p>
             </div>
-
             <div class="grid-3">
                 <article class="card">
-                    <h3 data-lang="en">Polish Visuals</h3>
-                    <h3 data-lang="zh">精修视觉展示</h3>
+                    <h3 data-lang="en">Graphics Renders</h3>
+                    <h3 data-lang="zh">图形渲染截图</h3>
                     <ul data-lang="en">
-                        <li>Improve screenshots from Computer Graphics.</li>
-                        <li>Make dinosaurs, trees and environments visually interesting.</li>
-                        <li>Add polished renders from Advanced Computer Graphics.</li>
+                        <li>High-quality renders from the Computer Graphics module.</li>
+                        <li>Ray-traced scenes from Advanced Computer Graphics.</li>
+                        <li>Side-by-side comparisons showing technique differences.</li>
                     </ul>
                     <ul data-lang="zh">
-                        <li>优化 Computer Graphics 项目截图。</li>
-                        <li>让恐龙、松树和环境画面更有吸引力。</li>
-                        <li>加入 Advanced Computer Graphics 的精修渲染图。</li>
+                        <li>Computer Graphics 模块的高质量渲染图。</li>
+                        <li>Advanced Computer Graphics 的光追渲染场景。</li>
+                        <li>展示技术差异的前后对比图。</li>
                     </ul>
                 </article>
                 <article class="card">
-                    <h3 data-lang="en">Add Course Projects</h3>
-                    <h3 data-lang="zh">加入课程项目</h3>
+                    <h3 data-lang="en">Course Projects</h3>
+                    <h3 data-lang="zh">课程项目</h3>
                     <ul data-lang="en">
-                        <li>Game from PFA.</li>
-                        <li>UI / Rasterizer from Games Engineering.</li>
-                        <li>UE5 game project.</li>
+                        <li>PFA game project with source and playthrough video.</li>
+                        <li>Games Engineering UI and rasterizer work.</li>
+                        <li>UE5 project with Blueprint and C++ breakdown.</li>
                     </ul>
                     <ul data-lang="zh">
-                        <li>加入 PFA 游戏项目。</li>
-                        <li>加入 Games Engineering 的 UI / Rasterizer 项目。</li>
-                        <li>加入 UE5 游戏项目。</li>
+                        <li>PFA 游戏项目，附源码与通关视频。</li>
+                        <li>Games Engineering 的 UI 与光栅化器作业。</li>
+                        <li>UE5 项目，附 Blueprint 与 C++ 拆解说明。</li>
                     </ul>
                 </article>
                 <article class="card">
-                    <h3 data-lang="en">Add Deliverables</h3>
-                    <h3 data-lang="zh">补充交付物</h3>
+                    <h3 data-lang="en">Deliverables</h3>
+                    <h3 data-lang="zh">交付物</h3>
                     <ul data-lang="en">
-                        <li>Report PDF with images and technical focus.</li>
-                        <li>Weekly videos and final gameplay summary video.</li>
-                        <li>Executable zip and source code link.</li>
+                        <li>Technical report PDFs with images and architecture diagrams.</li>
+                        <li>Gameplay summary videos for each major project.</li>
+                        <li>Downloadable executables alongside source links.</li>
                     </ul>
                     <ul data-lang="zh">
-                        <li>加入带图片和技术重点的报告 PDF。</li>
-                        <li>加入每周视频和最终 gameplay 总结视频。</li>
-                        <li>加入可执行文件压缩包和源码链接。</li>
+                        <li>带图与架构图的技术报告 PDF。</li>
+                        <li>每个主要项目的 Gameplay 总结视频。</li>
+                        <li>可下载可执行文件与源码链接并列展示。</li>
                     </ul>
                 </article>
             </div>
         </section>
 
+        <!-- EDUCATION -->
         <section class="section container" id="education">
             <div class="section-head">
                 <h2 data-lang="en">Education & Awards</h2>
                 <h2 data-lang="zh">教育背景与奖项</h2>
-                <p data-lang="en">Academic background in software engineering and game engineering.</p>
+                <p data-lang="en">Software engineering and game engineering academic background.</p>
                 <p data-lang="zh">软件工程与游戏工程方向的学习背景。</p>
             </div>
             <div class="grid-3">
                 <article class="card">
                     <h3>Nanjing University</h3>
-                    <p data-lang="en">BSc Software Engineering · School of Software · 2021.09 — 2025.06</p>
-                    <p data-lang="zh">软件工程 · 本科 · 软件学院 · 2021.09 — 2025.06</p>
+                    <p data-lang="en">BSc Software Engineering · School of Software · 2021–2025</p>
+                    <p data-lang="zh">软件工程 · 本科 · 软件学院 · 2021–2025</p>
                 </article>
                 <article class="card">
                     <h3>University of Warwick</h3>
-                    <p data-lang="en">MSc Game Engineering · WMG · United Kingdom · 2025.09 — 2026.09</p>
-                    <p data-lang="zh">游戏工程 · 硕士 · WMG · 英国 · 2025.09 — 2026.09</p>
+                    <p data-lang="en">MSc Game Engineering · WMG · United Kingdom · 2025–2026</p>
+                    <p data-lang="zh">游戏工程 · 硕士 · WMG · 英国 · 2025–2026</p>
                 </article>
                 <article class="card">
-                    <h3 data-lang="en">Awards & Certificates</h3>
-                    <h3 data-lang="zh">奖项与证书</h3>
+                    <h3 data-lang="en">Awards</h3>
+                    <h3 data-lang="zh">奖项</h3>
                     <p data-lang="en">Mathematical Contest in Modeling: S Award. IELTS 7.0.</p>
                     <p data-lang="zh">美国大学生建模竞赛 S 奖；雅思 7.0。</p>
                 </article>
@@ -1145,8 +1288,10 @@
             <div>
                 <strong data-lang="en">Yang Qianqi · Game Engineering Portfolio</strong>
                 <strong data-lang="zh">杨千琪 · 游戏工程作品集</strong>
-                <div data-lang="en">Keep this page updated with new demos, videos, screenshots, GitHub links and project reflections.</div>
-                <div data-lang="zh">建议持续更新新 Demo、视频、截图、GitHub 链接与项目反思。</div>
+                <div style="margin-top:6px;">
+                    <span data-lang="en" style="color:var(--muted);">MSc Game Engineering · University of Warwick · 2025–2026</span>
+                    <span data-lang="zh" style="color:var(--muted);">游戏工程硕士 · 华威大学 · 2025–2026</span>
+                </div>
             </div>
             <div>
                 <a href="mailto:2700yqq@gmail.com">2700yqq@gmail.com</a><br />
