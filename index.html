@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yang Qianqi | Game Engineering Portfolio</title>
-    <meta name="description" content="Yang Qianqi's polished CV and game engineering portfolio: C++, DirectX 12, gameplay systems, development diary, showreel, SLAM robotics, and course project evidence." />
+    <title>Yang Qianqi | Pixel Portfolio</title>
+    <meta name="description" content="Yang Qianqi's game engineering portfolio: C++, DirectX 12, gameplay systems, UI, and technical game development." />
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
         :root {
-            --bg: #0f1117;
-            --panel: #171a22;
-            --panel-2: #202530;
-            --ink: #f5efe7;
-            --muted: #b8afa5;
-            --soft: #8d8378;
-            --accent: #d96c54;
-            --accent-2: #7cc7ff;
-            --good: #a8e6c1;
-            --warn: #ffd18a;
-            --line: rgba(255, 255, 255, 0.12);
-            --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+            --bg: #111018;
+            --bg2: #1a1830;
+            --panel: #1f1b3a;
+            --panel-dark: #17142b;
+            --ink: #f4f1de;
+            --muted: #b8b4d9;
+            --accent: #ff7a59;
+            --accent2: #65d6ff;
+            --accent3: #9eff6e;
+            --line: #3e3968;
+            --shadow: #0b0a14;
+            --pixel-shadow: 4px 4px 0 #000;
             --max: 1180px;
         }
 
@@ -32,31 +35,40 @@
 
         body {
             margin: 0;
-            font-family: Inter, "Segoe UI", Arial, sans-serif;
-            background: radial-gradient(circle at top left, #2b1f22 0%, var(--bg) 35%, #0b0d12 100%);
             color: var(--ink);
-            line-height: 1.65;
+            background: linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+            background-size: 16px 16px, 16px 16px, cover;
+            font-family: "VT323", monospace;
+            font-size: 22px;
+            line-height: 1.45;
+            image-rendering: pixelated;
         }
 
         a {
             color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 28px));
+            margin: 0 auto;
         }
 
         .topbar {
             position: sticky;
             top: 0;
             z-index: 50;
-            backdrop-filter: blur(16px);
-            background: rgba(15, 17, 23, 0.82);
-            border-bottom: 1px solid var(--line);
+            background: rgba(17, 16, 24, 0.96);
+            border-bottom: 4px solid var(--line);
+            box-shadow: 0 4px 0 #000;
         }
 
         .nav-wrap {
-            width: min(var(--max), calc(100% - 32px));
+            width: min(var(--max), calc(100% - 28px));
             margin: 0 auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             gap: 18px;
             padding: 14px 0;
         }
@@ -64,420 +76,394 @@
         .brand {
             display: flex;
             flex-direction: column;
-            line-height: 1.2;
-            min-width: 160px;
-            text-decoration: none;
+            gap: 4px;
         }
 
             .brand strong {
-                letter-spacing: 0.06em;
+                font-family: "Press Start 2P", monospace;
+                font-size: 16px;
+                line-height: 1.4;
+                color: var(--accent2);
             }
 
             .brand span {
                 color: var(--muted);
-                font-size: 12px;
+                font-size: 18px;
             }
 
         nav {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 14px;
-            font-size: 14px;
-            color: var(--muted);
         }
 
             nav a {
-                text-decoration: none;
-                transition: 0.18s ease;
+                padding: 6px 10px;
+                border: 2px solid transparent;
+                color: var(--muted);
             }
 
                 nav a:hover {
                     color: var(--ink);
+                    border-color: var(--accent2);
+                    background: rgba(101, 214, 255, 0.08);
                 }
 
         .actions {
             display: flex;
             gap: 10px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        .btn, button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            border: 1px solid var(--line);
-            background: rgba(255, 255, 255, 0.04);
+        .btn,
+        button {
+            font-family: "Press Start 2P", monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            border: 3px solid #000;
+            background: var(--panel);
             color: var(--ink);
-            padding: 9px 13px;
-            border-radius: 999px;
+            padding: 10px 12px;
             cursor: pointer;
-            text-decoration: none;
-            font-size: 13px;
-            transition: 0.2s ease;
-            white-space: nowrap;
+            box-shadow: var(--pixel-shadow);
+            transition: transform 0.08s ease;
         }
 
-            .btn:hover, button:hover {
-                transform: translateY(-1px);
-                border-color: rgba(217, 108, 84, 0.75);
-                background: rgba(217, 108, 84, 0.16);
+            .btn:hover,
+            button:hover {
+                transform: translate(2px, 2px);
+                box-shadow: 2px 2px 0 #000;
             }
 
             .btn.primary {
                 background: var(--accent);
-                border-color: var(--accent);
-                color: #160b08;
-                font-weight: 700;
+                color: #1b0e07;
             }
 
-        .container {
-            width: min(var(--max), calc(100% - 32px));
-            margin: 0 auto;
-        }
-
         .hero {
-            padding: 82px 0 52px;
+            padding: 58px 0 42px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 42px;
-            align-items: center;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: start;
         }
 
         .eyebrow {
-            color: var(--accent-2);
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
+            font-family: "Press Start 2P", monospace;
             font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        h1, h2, h3 {
-            line-height: 1.18;
-        }
-
-        h1 {
-            margin: 0;
+            color: var(--accent3);
+            margin-bottom: 22px;
+            line-height: 1.8;
         }
 
         .hero-name {
+            margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            align-items: flex-start;
+            gap: 8px;
         }
 
         .name-en {
-            display: block;
-            font-size: clamp(48px, 8vw, 96px);
-            line-height: 0.95;
-            letter-spacing: -0.06em;
-            white-space: nowrap;
+            font-family: "Press Start 2P", monospace;
+            font-size: clamp(34px, 5vw, 68px);
+            line-height: 1.25;
+            color: var(--ink);
+            text-shadow: 4px 4px 0 #000;
         }
 
         .name-cn {
-            display: block;
-            font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-            font-size: clamp(38px, 6vw, 72px);
+            font-size: clamp(38px, 6vw, 78px);
             line-height: 1.05;
-            letter-spacing: 0.18em;
-            font-weight: 400;
-            color: #f8d8c8;
+            color: #ffd9ca;
+            text-shadow: 4px 4px 0 #000;
         }
 
         .hero p {
-            max-width: 720px;
+            max-width: 760px;
+            margin-top: 20px;
             color: var(--muted);
-            font-size: 18px;
-            margin: 20px 0 0;
+            font-size: 28px;
         }
 
         .hero-actions {
-            margin-top: 30px;
             display: flex;
-            flex-wrap: wrap;
             gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
         }
 
-        .profile-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-            border: 1px solid var(--line);
-            border-radius: 28px;
-            padding: 28px;
-            box-shadow: var(--shadow);
+        .panel {
+            background: var(--panel-dark);
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0 #000;
+            padding: 22px;
+            position: relative;
         }
 
-            .profile-card h2 {
-                margin: 0 0 12px;
-                font-size: 24px;
+            .panel::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                border: 2px solid var(--line);
             }
 
-            .profile-card p {
-                margin: 8px 0;
-                color: var(--muted);
-                font-size: 15px;
-            }
+        .profile-card h2,
+        .section-head h2,
+        .project h3,
+        .skill-card h3,
+        .card h3 {
+            font-family: "Press Start 2P", monospace;
+            line-height: 1.5;
+        }
 
-        .quick-tags {
+        .profile-card h2 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            color: var(--accent2);
+        }
+
+        .profile-card p {
+            margin: 8px 0;
+            color: var(--muted);
+            font-size: 24px;
+        }
+
+        .tag-row {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 18px;
+            margin-top: 16px;
         }
 
         .tag {
-            display: inline-flex;
-            padding: 5px 9px;
-            border: 1px solid rgba(217, 108, 84, 0.42);
-            color: #ffd2c6;
-            background: rgba(217, 108, 84, 0.08);
-            border-radius: 999px;
-            font-size: 12px;
-            line-height: 1.25;
+            border: 3px solid #000;
+            background: #2d2850;
+            color: #ffd3c5;
+            padding: 6px 10px;
+            box-shadow: 3px 3px 0 #000;
+            font-size: 18px;
         }
 
             .tag.blue {
-                color: #d5f0ff;
-                border-color: rgba(124,199,255,0.45);
-                background: rgba(124,199,255,0.1);
+                background: #243f59;
+                color: #d6f3ff;
             }
 
             .tag.green {
-                color: #d8ffe6;
-                border-color: rgba(168,230,193,0.45);
-                background: rgba(168,230,193,0.08);
+                background: #27452d;
+                color: #ddffd6;
+            }
+
+        .status-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .status {
+            border: 3px solid #000;
+            background: #221f3f;
+            padding: 12px;
+            box-shadow: 3px 3px 0 #000;
+        }
+
+            .status strong {
+                display: block;
+                font-family: "Press Start 2P", monospace;
+                font-size: 12px;
+                line-height: 1.6;
+                color: var(--accent2);
+                margin-bottom: 8px;
+            }
+
+            .status span {
+                font-size: 20px;
+                color: var(--muted);
             }
 
         .section {
-            padding: 56px 0;
-            border-top: 1px solid var(--line);
+            padding: 48px 0;
+            border-top: 4px solid var(--line);
         }
 
         .section-head {
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
-            gap: 30px;
+            gap: 22px;
+            margin-bottom: 24px;
             align-items: start;
-            margin-bottom: 28px;
         }
 
             .section-head h2 {
                 margin: 0;
-                font-size: clamp(28px, 4vw, 46px);
-                letter-spacing: -0.04em;
+                font-size: clamp(20px, 3vw, 30px);
+                color: var(--accent);
             }
 
             .section-head p {
                 margin: 0;
                 color: var(--muted);
+                font-size: 24px;
             }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 16px;
         }
 
-        .card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            padding: 22px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
         }
 
-            .card h3 {
+        .card,
+        .skill-card {
+            background: var(--panel);
+            border: 4px solid #000;
+            box-shadow: 5px 5px 0 #000;
+            padding: 18px;
+        }
+
+            .card h3,
+            .skill-card h3 {
                 margin: 0 0 10px;
-                font-size: 20px;
+                font-size: 16px;
+                color: var(--accent2);
             }
 
-            .card p {
+            .card p,
+            .skill-card p {
                 margin: 0;
                 color: var(--muted);
-            }
-
-            .card ul {
-                margin: 10px 0 0;
-                padding-left: 18px;
-                color: var(--muted);
-            }
-
-            .card li {
-                margin: 6px 0;
-            }
-
-        .status-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .status {
-            padding: 14px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: rgba(0,0,0,0.14);
-        }
-
-            .status strong {
-                display: block;
-                font-size: 13px;
-                text-transform: uppercase;
-                letter-spacing: 0.08em;
-                color: var(--accent-2);
-            }
-
-            .status span {
-                color: var(--muted);
-                font-size: 14px;
+                font-size: 23px;
             }
 
         .project {
-            background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
-            border: 1px solid var(--line);
-            border-radius: 30px;
+            background: var(--panel-dark);
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0 #000;
             overflow: hidden;
-            margin-bottom: 26px;
-            box-shadow: var(--shadow);
+            margin-bottom: 22px;
         }
 
         .project-layout {
             display: grid;
-            grid-template-columns: 0.92fr 1.08fr;
-            min-height: 360px;
+            grid-template-columns: 0.9fr 1.1fr;
         }
 
         .media {
-            background: linear-gradient(135deg, rgba(124,199,255,0.18), rgba(217,108,84,0.14));
-            border-right: 1px solid var(--line);
-            padding: 22px;
+            border-right: 4px solid #000;
+            background: linear-gradient(180deg, rgba(101,214,255,0.12), rgba(255,122,89,0.12)), #211d3d;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 16px;
+            gap: 14px;
         }
 
         .media-frame {
             min-height: 230px;
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 22px;
+            border: 4px solid #000;
+            background: linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.03) 75%, transparent 75%, transparent), #16132a;
+            background-size: 16px 16px;
+            padding: 18px;
             display: grid;
             place-items: center;
             text-align: center;
-            color: var(--muted);
-            padding: 20px;
-            background: rgba(0,0,0,0.22);
+            box-shadow: inset 0 0 0 2px var(--line);
         }
 
-            .media-frame img, .media-frame video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 18px;
-            }
-
-        .tech-highlight {
-            padding: 18px 20px;
-            background: rgba(0,0,0,0.22);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 18px;
-            font-size: 13px;
-            color: var(--muted);
-            line-height: 1.7;
+        .media-title {
+            font-family: "Press Start 2P", monospace;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--accent3);
+            margin-bottom: 12px;
         }
 
-            .tech-highlight strong {
-                display: block;
-                color: var(--accent-2);
-                font-size: 11px;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                margin-bottom: 8px;
-            }
+        .media-frame p,
+        .media-note {
+            color: var(--muted);
+            font-size: 22px;
+            margin: 0;
+        }
 
         .project-body {
-            padding: 28px;
+            padding: 22px;
         }
 
         .project-top {
             display: flex;
             justify-content: space-between;
-            gap: 18px;
+            gap: 16px;
             align-items: start;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .project h3 {
             margin: 0;
-            font-size: clamp(24px, 4vw, 34px);
-            letter-spacing: -0.03em;
+            font-size: 18px;
+            color: var(--ink);
+        }
+
+        .role {
+            color: var(--accent2);
+            font-size: 22px;
+            margin-top: 6px;
         }
 
         .date {
             color: var(--soft);
-            font-size: 13px;
+            font-size: 21px;
             white-space: nowrap;
-        }
-
-        .role {
-            color: var(--accent-2);
-            font-size: 14px;
-            font-weight: 700;
-            margin-top: 6px;
         }
 
         .project-summary {
             color: var(--muted);
-            margin: 14px 0 20px;
+            margin: 14px 0 18px;
+            font-size: 24px;
         }
 
         .detail-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
-            margin-top: 16px;
+            margin-top: 14px;
         }
 
         .mini {
-            background: rgba(0,0,0,0.16);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 15px;
+            background: #211d3d;
+            border: 3px solid #000;
+            box-shadow: 3px 3px 0 #000;
+            padding: 14px;
         }
 
             .mini strong {
                 display: block;
-                color: #ffe2d8;
-                margin-bottom: 7px;
-                font-size: 13px;
-                text-transform: uppercase;
-                letter-spacing: 0.08em;
+                font-family: "Press Start 2P", monospace;
+                font-size: 12px;
+                line-height: 1.7;
+                color: var(--accent);
+                margin-bottom: 10px;
             }
 
             .mini ul {
                 margin: 0;
-                padding-left: 18px;
+                padding-left: 20px;
                 color: var(--muted);
-            }
-
-            .mini li {
-                margin: 5px 0;
+                font-size: 22px;
             }
 
         .links {
             display: flex;
-            flex-wrap: wrap;
             gap: 10px;
-            margin-top: 18px;
+            flex-wrap: wrap;
+            margin-top: 16px;
         }
 
         .skills-wrap {
@@ -486,148 +472,47 @@
             gap: 16px;
         }
 
-        .skill-card {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            padding: 18px;
-        }
-
-            .skill-card h3 {
-                margin: 0 0 12px;
-                font-size: 18px;
-            }
-
         .timeline {
-            border-left: 1px solid var(--line);
-            padding-left: 24px;
+            border-left: 4px solid var(--accent2);
+            padding-left: 20px;
         }
 
         .timeline-item {
             position: relative;
-            padding: 0 0 28px;
+            padding-bottom: 22px;
         }
 
             .timeline-item::before {
                 content: "";
                 position: absolute;
-                left: -31px;
-                top: 5px;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
+                left: -30px;
+                top: 4px;
+                width: 14px;
+                height: 14px;
                 background: var(--accent);
-                box-shadow: 0 0 0 5px rgba(217,108,84,0.12);
+                border: 3px solid #000;
+                box-shadow: 3px 3px 0 #000;
             }
 
             .timeline-item h3 {
-                margin: 0 0 5px;
+                margin: 0 0 6px;
+                font-family: "Press Start 2P", monospace;
+                font-size: 15px;
+                line-height: 1.6;
+                color: var(--accent2);
             }
 
             .timeline-item p {
-                margin: 8px 0 0;
+                margin: 6px 0 0;
                 color: var(--muted);
-            }
-
-        .checklist {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .check-item {
-            display: flex;
-            gap: 10px;
-            padding: 14px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: rgba(255,255,255,0.035);
-            color: var(--muted);
-        }
-
-            .check-item b {
-                color: var(--ink);
-            }
-
-        .dot {
-            color: var(--good);
-            font-weight: 900;
-        }
-
-        .showreel-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 0.6fr;
-            gap: 18px;
-        }
-
-        .showreel-main {
-            background: rgba(0,0,0,0.22);
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .showreel-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(124,199,255,0.12), rgba(217,108,84,0.10));
-        }
-
-        .showreel-meta {
-            position: relative;
-            z-index: 1;
-        }
-
-            .showreel-meta h3 {
-                margin: 0 0 6px;
-                font-size: 22px;
-            }
-
-            .showreel-meta p {
-                margin: 0;
-                color: var(--muted);
-                font-size: 14px;
-            }
-
-        .showreel-side {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .diary-entry {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            padding: 16px 18px;
-        }
-
-            .diary-entry .de-date {
-                font-size: 11px;
-                color: var(--accent-2);
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                margin-bottom: 6px;
-            }
-
-            .diary-entry p {
-                margin: 0;
-                color: var(--muted);
-                font-size: 14px;
-                line-height: 1.6;
+                font-size: 23px;
             }
 
         footer {
-            border-top: 1px solid var(--line);
-            padding: 34px 0 46px;
+            border-top: 4px solid var(--line);
+            padding: 28px 0 40px;
             color: var(--muted);
+            font-size: 22px;
         }
 
         .footer-grid {
@@ -650,22 +535,26 @@
         }
 
         @media (max-width: 980px) {
-            .hero, .section-head, .project-layout, .showreel-grid {
+            .hero,
+            .section-head,
+            .project-layout {
                 grid-template-columns: 1fr;
             }
 
             .media {
                 border-right: none;
-                border-bottom: 1px solid var(--line);
+                border-bottom: 4px solid #000;
             }
 
-            .grid-2, .grid-3, .skills-wrap, .status-row {
+            .grid-3,
+            .skills-wrap,
+            .status-row {
                 grid-template-columns: 1fr 1fr;
             }
 
             .nav-wrap {
-                align-items: flex-start;
                 flex-direction: column;
+                align-items: flex-start;
             }
 
             nav {
@@ -674,7 +563,11 @@
         }
 
         @media (max-width: 680px) {
-            .grid-2, .grid-3, .skills-wrap, .detail-grid, .checklist, .status-row {
+            .grid-3,
+            .grid-2,
+            .skills-wrap,
+            .detail-grid,
+            .status-row {
                 grid-template-columns: 1fr;
             }
 
@@ -686,13 +579,12 @@
                 white-space: normal;
             }
 
-            .hero {
-                padding-top: 48px;
-            }
-
             .actions {
                 width: 100%;
-                flex-wrap: wrap;
+            }
+
+            .name-en {
+                white-space: normal;
             }
         }
     </style>
@@ -700,18 +592,20 @@
 <body>
     <header class="topbar">
         <div class="nav-wrap">
-            <a class="brand" href="#home" aria-label="Yang Qianqi portfolio home">
-                <strong>Yang Qianqi</strong>
+            <a class="brand" href="#home">
+                <strong>YANG QIANQI</strong>
                 <span>Game Engineering Portfolio</span>
             </a>
-            <nav aria-label="Main navigation">
-                <a href="#showreel">Showreel</a>
+
+            <nav>
+                <a href="#showcase">Showcase</a>
                 <a href="#projects">Projects</a>
-                <a href="#cv">CV Evidence</a>
+                <a href="#profile">Profile</a>
                 <a href="#skills">Skills</a>
-                <a href="#roadmap">Roadmap</a>
+                <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </nav>
+
             <div class="actions">
                 <button type="button" id="langToggle">中文</button>
                 <a class="btn" href="assets/Yang_Qianqi_CV.pdf" target="_blank" rel="noreferrer">Download CV</a>
@@ -722,124 +616,122 @@
     <main>
         <section class="hero container" id="home">
             <div>
-                <div class="eyebrow" data-lang="en">C++ · Game Engineering · Technical Gameplay · DirectX 12</div>
-                <div class="eyebrow" data-lang="zh">C++ · 游戏工程 · 技术向玩法开发 · DirectX 12</div>
+                <div class="eyebrow" data-lang="en">C++ · GAME ENGINEERING · TECHNICAL GAMEPLAY</div>
+                <div class="eyebrow" data-lang="zh">C++ · 游戏工程 · 技术向玩法开发</div>
+
                 <h1 class="hero-name">
                     <span class="name-en">Yang Qianqi</span>
                     <span class="name-cn">杨千琪</span>
                 </h1>
-                <p data-lang="en">MSc Game Engineering student at the University of Warwick WMG. I build gameplay systems and rendering pipelines from scratch in C++ and DirectX 12 — this site collects my projects, source code, and technical writing in one place.</p>
-                <p data-lang="zh">华威大学 WMG 游戏工程硕士在读。我用 C++ 和 DirectX 12 从零构建玩法系统与渲染管线——这个网站集中展示我的项目、源码与技术写作。</p>
+
+                <p data-lang="en">
+                    Game engineering postgraduate with a software engineering background, focusing on C++ gameplay systems, DirectX 12 rendering, UI implementation, interaction design and real-time technical problem solving.
+                </p>
+                <p data-lang="zh">
+                    具有软件工程背景的游戏工程硕士，关注 C++ 玩法系统、DirectX 12 渲染、UI 实现、交互设计与实时系统中的技术问题解决。
+                </p>
+
                 <div class="hero-actions">
                     <a class="btn primary" href="#projects" data-lang="en">View Projects</a>
                     <a class="btn primary" href="#projects" data-lang="zh">查看项目</a>
-                    <a class="btn" href="#showreel" data-lang="en">Development Log</a>
-                    <a class="btn" href="#showreel" data-lang="zh">开发日志</a>
                     <a class="btn" href="https://github.com/2700yqq" target="_blank" rel="noreferrer">GitHub</a>
                     <a class="btn" href="mailto:2700yqq@gmail.com">Email</a>
                 </div>
             </div>
 
-            <aside class="profile-card">
+            <aside class="profile-card panel">
                 <h2 data-lang="en">Target Roles</h2>
                 <h2 data-lang="zh">目标岗位</h2>
+
                 <p data-lang="en">Gameplay Programmer · Junior Game Engineer · C++ Developer · Technical Designer</p>
-                <p data-lang="zh">玩法程序员 · 初级游戏工程师 · C++ 开发工程师 · 技术策划</p>
-                <div class="quick-tags">
-                    <span class="tag">C++</span><span class="tag">DirectX 12</span><span class="tag">UE5</span><span class="tag">Gameplay Systems</span><span class="tag">UI</span><span class="tag">AI FSM</span><span class="tag">SLAM</span>
+                <p data-lang="zh">玩法程序员 · 初级游戏工程师 · C++ 开发工程师 · 技术策划 / 技术设计</p>
+
+                <div class="tag-row">
+                    <span class="tag">C++</span>
+                    <span class="tag">DirectX 12</span>
+                    <span class="tag">UE5</span>
+                    <span class="tag">Gameplay Systems</span>
+                    <span class="tag">UI</span>
+                    <span class="tag">AI FSM</span>
+                    <span class="tag">SLAM</span>
                 </div>
+
                 <div class="status-row">
                     <div class="status">
-                        <strong data-lang="en">CV</strong><strong data-lang="zh">简历</strong>
-                        <span data-lang="en">Updated · downloadable</span><span data-lang="zh">已更新，可下载</span>
+                        <strong>CV</strong>
+                        <span data-lang="en">Downloadable resume</span>
+                        <span data-lang="zh">可下载简历</span>
                     </div>
                     <div class="status">
-                        <strong>GitHub</strong>
-                        <span data-lang="en">Source linked per project</span><span data-lang="zh">每个项目均附源码</span>
+                        <strong>GITHUB</strong>
+                        <span data-lang="en">Source code</span>
+                        <span data-lang="zh">源码仓库</span>
                     </div>
                     <div class="status">
-                        <strong data-lang="en">Status</strong><strong data-lang="zh">状态</strong>
-                        <span data-lang="en">Open to opportunities</span><span data-lang="zh">欢迎联系</span>
+                        <strong data-lang="en">PORTFOLIO</strong>
+                        <strong data-lang="zh">作品集</strong>
+                        <span data-lang="en">Project showcase</span>
+                        <span data-lang="zh">项目展示</span>
                     </div>
                 </div>
             </aside>
         </section>
 
-        <!-- SHOWREEL -->
-        <section class="section container" id="showreel">
+        <section class="section container" id="showcase">
             <div class="section-head">
-                <h2 data-lang="en">Showreel & Log</h2>
-                <h2 data-lang="zh">Showreel 与开发日志</h2>
-                <p data-lang="en">Selected footage and progress notes from active development — updated as new systems are completed.</p>
-                <p data-lang="zh">记录开发过程中的关键节点与系统进展，持续更新。</p>
+                <h2 data-lang="en">Selected Showcase</h2>
+                <h2 data-lang="zh">作品展示概览</h2>
+                <p data-lang="en">A selection of work across gameplay programming, graphics, UI systems and software engineering.</p>
+                <p data-lang="zh">这里展示我在玩法编程、图形、UI 系统与软件工程方向的项目实践。</p>
             </div>
 
-            <div class="showreel-grid">
-                <div class="showreel-main">
-                    <div class="showreel-bg"></div>
-                    <div class="showreel-meta">
-                        <div class="quick-tags" style="margin-bottom:12px; margin-top:0;">
-                            <span class="tag">3D FPS Demo</span><span class="tag">DirectX 12</span><span class="tag">C++</span>
-                        </div>
-                        <h3 data-lang="en">Game902 · Latest Build</h3>
-                        <h3 data-lang="zh">Game902 · 最新构建</h3>
-                        <p data-lang="en">First-person shooter featuring dinosaur AI enemies, WASD + mouse-look controls, ammo/health HUD, and collision-based level geometry — built on a custom DirectX 12 renderer.</p>
-                        <p data-lang="zh">第一人称射击 Demo，包含恐龙 AI 敌人、WASD + 鼠标视角、弹药/生命 HUD，以及基于碰撞检测的关卡几何体，运行在自研 DirectX 12 渲染器上。</p>
-                    </div>
-                </div>
-                <div class="showreel-side">
-                    <div class="diary-entry">
-                        <div class="de-date" data-lang="en">Log · Jan 2026</div>
-                        <div class="de-date" data-lang="zh">日志 · 2026.01</div>
-                        <p data-lang="en">Enemy FSM refactored — patrol, chase, and melee states now share a single update tick. Reduced per-frame allocations by caching entity lists.</p>
-                        <p data-lang="zh">重构了敌人 FSM：巡逻、追踪、近战三个状态共用同一个 update tick，缓存实体列表后减少了每帧内存分配。</p>
-                    </div>
-                    <div class="diary-entry">
-                        <div class="de-date" data-lang="en">Log · Feb 2026</div>
-                        <div class="de-date" data-lang="zh">日志 · 2026.02</div>
-                        <p data-lang="en">Collision detection broadphase added. AABB pre-check reduced unnecessary narrow-phase tests by ~60% in dense scenes.</p>
-                        <p data-lang="zh">加入碰撞检测宽相，AABB 预检在密集场景中减少了约 60% 的窄相测试次数。</p>
-                    </div>
-                    <div class="diary-entry">
-                        <div class="de-date" data-lang="en">Log · Mar 2026</div>
-                        <div class="de-date" data-lang="zh">日志 · 2026.03</div>
-                        <p data-lang="en">HUD rewritten using screen-space quads. Ammo counter, health bar, and crosshair now independent of world geometry rendering pass.</p>
-                        <p data-lang="zh">HUD 用 screen-space quad 重写，弹药计数、血条与准心现在独立于世界几何渲染 pass。</p>
-                    </div>
-                </div>
+            <div class="grid-3">
+                <article class="card">
+                    <h3 data-lang="en">Gameplay Systems</h3>
+                    <h3 data-lang="zh">玩法系统</h3>
+                    <p data-lang="en">Player controls, combat interaction, enemy logic, collision handling and progression systems.</p>
+                    <p data-lang="zh">玩家控制、战斗交互、敌人逻辑、碰撞处理与成长系统。</p>
+                </article>
+
+                <article class="card">
+                    <h3 data-lang="en">Graphics & Rendering</h3>
+                    <h3 data-lang="zh">图形与渲染</h3>
+                    <p data-lang="en">DirectX 12 rendering, scene setup, technical implementation and real-time visual systems.</p>
+                    <p data-lang="zh">DirectX 12 渲染、场景搭建、技术实现与实时视觉系统。</p>
+                </article>
+
+                <article class="card">
+                    <h3 data-lang="en">Interface Development</h3>
+                    <h3 data-lang="zh">界面开发</h3>
+                    <p data-lang="en">Interaction-focused UI development for applications and mobile systems with performance awareness.</p>
+                    <p data-lang="zh">面向交互体验的应用与移动端 UI 开发，并兼顾性能优化。</p>
+                </article>
             </div>
         </section>
 
-        <!-- PROJECTS -->
         <section class="section container" id="projects">
             <div class="section-head">
-                <h2 data-lang="en">Projects</h2>
+                <h2 data-lang="en">Featured Projects</h2>
                 <h2 data-lang="zh">核心项目</h2>
-                <p data-lang="en">Selected projects for game engineering and technical gameplay roles, each with source code and implementation notes.</p>
-                <p data-lang="zh">面向游戏工程岗位的代表作，每个项目附源码与技术实现说明。</p>
+                <p data-lang="en">Selected work for game engineering, technical gameplay and C++ development roles.</p>
+                <p data-lang="zh">以下项目面向游戏工程、技术向玩法与 C++ 开发岗位展示。</p>
             </div>
 
-            <!-- PROJECT 1 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <p style="font-size:13px; color:var(--muted); margin:0;">
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">3D First-Person Shooter</strong>
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">3D 第一人称射击游戏</strong>
-                                    <span data-lang="en">C++ · DirectX 12 · Custom renderer</span>
-                                    <span data-lang="zh">C++ · DirectX 12 · 自研渲染器</span>
-                                </p>
+                                <div class="media-title" data-lang="en">DIRECTX 12 FPS DEMO</div>
+                                <div class="media-title" data-lang="zh">DIRECTX 12 第一人称射击 DEMO</div>
+                                <p data-lang="en">Player control · Enemy AI · Collision · Shooting</p>
+                                <p data-lang="zh">玩家控制 · 敌人 AI · 碰撞 · 射击交互</p>
                             </div>
                         </div>
-                        <div class="tech-highlight">
-                            <strong data-lang="en">Architecture</strong>
-                            <strong data-lang="zh">架构说明</strong>
-                            <span data-lang="en">Rendering loop drives a scene graph of static meshes and dynamic entities. Input system maps raw Win32 messages to an action queue consumed by the player controller each tick.</span>
-                            <span data-lang="zh">渲染循环驱动包含静态网格与动态实体的场景图。输入系统将 Win32 消息映射为 action queue，每帧由玩家控制器消费。</span>
-                        </div>
+                        <div class="media-note" data-lang="en">C++ gameplay and rendering prototype built around first-person interaction.</div>
+                        <div class="media-note" data-lang="zh">围绕第一人称交互构建的 C++ 玩法与渲染原型。</div>
                     </div>
+
                     <div class="project-body">
                         <div class="project-top">
                             <div>
@@ -850,43 +742,55 @@
                             </div>
                             <div class="date">2025.11 — 2026.03</div>
                         </div>
-                        <div class="quick-tags">
-                            <span class="tag">C++</span><span class="tag">DirectX 12</span><span class="tag">3D Rendering</span><span class="tag">AI FSM</span><span class="tag">Collision Detection</span><span class="tag blue">HUD</span>
+
+                        <div class="tag-row">
+                            <span class="tag">C++</span>
+                            <span class="tag">DirectX 12</span>
+                            <span class="tag">3D Rendering</span>
+                            <span class="tag">AI FSM</span>
+                            <span class="tag">Collision Detection</span>
+                            <span class="tag blue">UI</span>
                         </div>
-                        <p class="project-summary" data-lang="en">A first-person 3D shooter built from scratch in C++ and DirectX 12. Covers the full rendering pipeline from swap chain setup through scene management, player input, enemy AI states, collision detection, and basic gameplay loop.</p>
-                        <p class="project-summary" data-lang="zh">使用 C++ 与 DirectX 12 从零构建的第一人称 3D 射击游戏，完整覆盖从交换链设置到场景管理、玩家输入、敌人 AI 状态、碰撞检测与基础玩法循环。</p>
+
+                        <p class="project-summary" data-lang="en">
+                            A first-person 3D shooter built from scratch using C++ and DirectX 12, covering rendering setup, scene management, player interaction, enemy state logic, collision detection and core gameplay systems.
+                        </p>
+                        <p class="project-summary" data-lang="zh">
+                            使用 C++ 与 DirectX 12 从零构建的第一人称 3D 射击游戏，覆盖渲染搭建、场景管理、玩家交互、敌人状态逻辑、碰撞检测与核心玩法系统。
+                        </p>
+
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Key Systems</strong>
-                                <strong data-lang="zh">核心系统</strong>
+                                <strong data-lang="en">Technical Work</strong>
+                                <strong data-lang="zh">技术实现</strong>
                                 <ul data-lang="en">
-                                    <li>Mouse look, WASD movement, shooting and reload.</li>
-                                    <li>Dinosaur enemy FSM: patrol → chase → melee attack.</li>
-                                    <li>Ammo, health, and AABB collision systems.</li>
-                                    <li>Screen-space HUD independent of world render pass.</li>
+                                    <li>Implemented mouse look, WASD movement, shooting and reloading.</li>
+                                    <li>Designed dinosaur enemy states: patrol, chase and melee attack.</li>
+                                    <li>Built ammunition, health and collision systems.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>鼠标视角、WASD 移动、射击与装弹。</li>
-                                    <li>恐龙敌人 FSM：巡逻→追踪→近战攻击。</li>
-                                    <li>弹药、生命值与 AABB 碰撞系统。</li>
-                                    <li>独立于世界渲染 pass 的 screen-space HUD。</li>
+                                    <li>实现鼠标视角、WASD 移动、射击与装弹。</li>
+                                    <li>设计恐龙敌人的巡逻、追踪和近战状态。</li>
+                                    <li>构建弹药、生命值与碰撞系统。</li>
                                 </ul>
                             </div>
+
                             <div class="mini">
-                                <strong data-lang="en">Reflections</strong>
-                                <strong data-lang="zh">技术反思</strong>
+                                <strong data-lang="en">Project Value</strong>
+                                <strong data-lang="zh">项目价值</strong>
                                 <ul data-lang="en">
-                                    <li>Enemy pathfinding is grid-based; A* would improve navigation in open spaces.</li>
-                                    <li>Collision response is impulse-only; adding a physics integrator would help with slopes.</li>
-                                    <li>Texture streaming not yet implemented — all assets load upfront.</li>
+                                    <li>Demonstrates low-level C++ game programming practice.</li>
+                                    <li>Shows real-time interaction and state-driven enemy behaviour.</li>
+                                    <li>Connects graphics implementation with playable mechanics.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>敌人寻路基于网格，开放空间中 A* 效果更优。</li>
-                                    <li>碰撞响应仅用冲量，添加物理积分器能更好处理斜面。</li>
-                                    <li>暂未实现贴图流式加载，所有资产目前预加载。</li>
+                                    <li>体现底层 C++ 游戏编程实践。</li>
+                                    <li>展示实时交互与状态驱动的敌人行为。</li>
+                                    <li>将图形实现与可玩机制结合。</li>
                                 </ul>
                             </div>
                         </div>
+
                         <div class="links">
                             <a class="btn" href="https://github.com/2700yqq/Game902" target="_blank" rel="noreferrer">GitHub Repo</a>
                         </div>
@@ -894,74 +798,79 @@
                 </div>
             </article>
 
-            <!-- PROJECT 2 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <p style="font-size:13px; color:var(--muted); margin:0;">
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">2D Bullet-Hell Survival</strong>
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">2D 弹幕生存游戏</strong>
-                                    <span data-lang="en">C++ · Gameplay Systems</span>
-                                    <span data-lang="zh">C++ · 玩法系统</span>
-                                </p>
+                                <div class="media-title" data-lang="en">2D SURVIVAL GAME</div>
+                                <div class="media-title" data-lang="zh">2D 弹幕生存游戏</div>
+                                <p data-lang="en">Wave combat · Items · Save system · Level modes</p>
+                                <p data-lang="zh">波次战斗 · 道具 · 存档系统 · 关卡模式</p>
                             </div>
                         </div>
-                        <div class="tech-highlight">
-                            <strong data-lang="en">Save/Load Design</strong>
-                            <strong data-lang="zh">存档设计</strong>
-                            <span data-lang="en">Game state serialised to a binary slot format. Wave seed, player stats, item inventory and elapsed time all checkpoint together to avoid partial-save corruption.</span>
-                            <span data-lang="zh">游戏状态序列化为二进制槽格式，波次种子、玩家属性、道具栏与已用时间整体存档，避免部分写入导致的存档损坏。</span>
-                        </div>
+                        <div class="media-note" data-lang="en">C++ gameplay prototype focused on replayability and progression.</div>
+                        <div class="media-note" data-lang="zh">围绕重复游玩与成长节奏设计的 C++ 玩法原型。</div>
                     </div>
+
                     <div class="project-body">
                         <div class="project-top">
                             <div>
-                                <h3 data-lang="en">2D Bullet-Hell Survival Game</h3>
+                                <h3 data-lang="en">2D Bullet-Hell Survival Game Demo</h3>
                                 <h3 data-lang="zh">2D 弹幕生存游戏 Demo</h3>
                                 <div class="role" data-lang="en">Solo Developer · C++ Gameplay Systems</div>
                                 <div class="role" data-lang="zh">独立开发者 · C++ 玩法系统</div>
                             </div>
                             <div class="date">2025.10 — 2025.11</div>
                         </div>
-                        <div class="quick-tags">
-                            <span class="tag">C++</span><span class="tag">2D Game</span><span class="tag">Save System</span><span class="tag">Item System</span><span class="tag">Wave Design</span>
+
+                        <div class="tag-row">
+                            <span class="tag">C++</span>
+                            <span class="tag">2D Game</span>
+                            <span class="tag">Save System</span>
+                            <span class="tag">Item System</span>
+                            <span class="tag">Level Design</span>
                         </div>
-                        <p class="project-summary" data-lang="en">A C++ bullet-hell survival game with WASD movement, area-attack skills, random item rewards, complete save/load, and escalating wave difficulty across two map modes.</p>
-                        <p class="project-summary" data-lang="zh">基于 C++ 的弹幕生存游戏，实现 WASD 移动、范围攻击、随机道具奖励、完整存档读档，以及两种地图模式下的递增波次难度。</p>
+
+                        <p class="project-summary" data-lang="en">
+                            A C++ bullet-hell survival game focused on player movement, area attack skills, random item rewards, save/load functionality and increasing wave difficulty.
+                        </p>
+                        <p class="project-summary" data-lang="zh">
+                            基于 C++ 的弹幕生存游戏，重点实现玩家移动、范围攻击、随机道具、存档/读档与波次难度递增。
+                        </p>
+
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Key Systems</strong>
-                                <strong data-lang="zh">核心系统</strong>
+                                <strong data-lang="en">Technical Work</strong>
+                                <strong data-lang="zh">技术实现</strong>
                                 <ul data-lang="en">
-                                    <li>WASD movement and radial area-attack with cooldown.</li>
-                                    <li>Binary checkpoint save/load with slot selection.</li>
-                                    <li>Weighted random item pool with stat modifiers.</li>
-                                    <li>Enemy wave manager with configurable spawn curves.</li>
+                                    <li>Implemented WASD movement and area attack skills.</li>
+                                    <li>Built complete save/load functionality.</li>
+                                    <li>Designed random item rewards and two map modes.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>WASD 移动与带冷却的环形范围攻击。</li>
-                                    <li>带槽位选择的二进制存档/读档。</li>
-                                    <li>带权重的随机道具池与属性加成。</li>
-                                    <li>可配置生成曲线的波次管理器。</li>
+                                    <li>实现 WASD 移动与范围攻击技能。</li>
+                                    <li>完成存档/读档功能。</li>
+                                    <li>设计随机道具系统与两种地图模式。</li>
                                 </ul>
                             </div>
+
                             <div class="mini">
-                                <strong data-lang="en">Reflections</strong>
-                                <strong data-lang="zh">技术反思</strong>
+                                <strong data-lang="en">Project Value</strong>
+                                <strong data-lang="zh">项目价值</strong>
                                 <ul data-lang="en">
-                                    <li>Wave balance tuned by hand; a data-driven config file would make iteration faster.</li>
-                                    <li>Item pool is fixed — a weighted rarity tier system would scale better.</li>
-                                    <li>No spatial partitioning; bullet vs enemy checks are O(n²) above 200 entities.</li>
+                                    <li>Shows gameplay progression through wave-based difficulty.</li>
+                                    <li>Combines player skills, item rewards and survival pressure.</li>
+                                    <li>Demonstrates reusable gameplay-system implementation.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>波次平衡靠手动调参，数据驱动配置文件会让迭代更快。</li>
-                                    <li>道具池固定，稀有度权重分层系统扩展性更好。</li>
-                                    <li>无空间分区，200 个实体以上时子弹碰撞检测为 O(n²)。</li>
+                                    <li>通过波次难度体现玩法推进。</li>
+                                    <li>结合玩家技能、道具奖励与生存压力。</li>
+                                    <li>展示可复用的玩法系统实现能力。</li>
                                 </ul>
                             </div>
                         </div>
+
                         <div class="links">
                             <a class="btn" href="https://github.com/2700yqq/2DGameDemo" target="_blank" rel="noreferrer">GitHub Repo</a>
                         </div>
@@ -969,139 +878,75 @@
                 </div>
             </article>
 
-            <!-- PROJECT 3 -->
             <article class="project">
                 <div class="project-layout">
                     <div class="media">
                         <div class="media-frame">
                             <div>
-                                <p style="font-size:13px; color:var(--muted); margin:0;">
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">HarmonyOS Campus Social</strong>
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">鸿蒙校园社交平台</strong>
-                                    <span data-lang="en">ArkUI · SpringBoot · Team project</span>
-                                    <span data-lang="zh">ArkUI · SpringBoot · 团队项目</span>
-                                </p>
+                                <div class="media-title" data-lang="en">HARMONYOS SOCIAL APP</div>
+                                <div class="media-title" data-lang="zh">鸿蒙校园社交平台</div>
+                                <p data-lang="en">ArkUI · Interaction design · Frontend performance</p>
+                                <p data-lang="zh">ArkUI · 交互设计 · 前端性能优化</p>
                             </div>
                         </div>
-                        <div class="tech-highlight">
-                            <strong data-lang="en">Performance Work</strong>
-                            <strong data-lang="zh">性能优化</strong>
-                            <span data-lang="en">Identified unnecessary full-list re-renders on data updates. Moved to keyed diff reconciliation, cutting redundant render passes and smoothing scroll jank on mid-range hardware.</span>
-                            <span data-lang="zh">发现数据更新触发全列表重渲染的问题，改为 keyed diff 协调策略，减少冗余渲染 pass，明显改善中端设备上的滚动卡顿。</span>
-                        </div>
+                        <div class="media-note" data-lang="en">Frontend engineering project combining interface design and performance optimisation.</div>
+                        <div class="media-note" data-lang="zh">结合界面设计与性能优化的前端工程项目。</div>
                     </div>
+
                     <div class="project-body">
                         <div class="project-top">
                             <div>
                                 <h3 data-lang="en">HarmonyOS Campus Social Platform</h3>
                                 <h3 data-lang="zh">鸿蒙校园社交平台</h3>
-                                <div class="role" data-lang="en">Frontend Engineer · Team of 4</div>
-                                <div class="role" data-lang="zh">前端工程师 · 四人团队</div>
+                                <div class="role" data-lang="en">Frontend Engineer · Team Project</div>
+                                <div class="role" data-lang="zh">前端工程师 · 团队项目</div>
                             </div>
                             <div class="date">2023.09 — 2023.12</div>
                         </div>
-                        <div class="quick-tags">
-                            <span class="tag">HarmonyOS</span><span class="tag">ArkUI</span><span class="tag">SpringBoot</span><span class="tag">Frontend Performance</span><span class="tag green">Team</span>
-                        </div>
-                        <p class="project-summary" data-lang="en">A Xiaohongshu-style campus social app built with HarmonyOS ArkUI and SpringBoot. I owned the frontend architecture — component structure, interaction standards, and rendering-performance work to smooth list scrolling.</p>
-                        <p class="project-summary" data-lang="zh">使用 HarmonyOS ArkUI + SpringBoot 开发的类小红书校园社交应用。我负责前端架构设计——组件结构、交互规范，以及针对列表滚动的渲染性能优化。</p>
-                        <div class="detail-grid">
-                            <div class="mini">
-                                <strong data-lang="en">Key Contributions</strong>
-                                <strong data-lang="zh">主要贡献</strong>
-                                <ul data-lang="en">
-                                    <li>Designed the component hierarchy and inter-page navigation model.</li>
-                                    <li>Established team-wide interaction and spacing standards.</li>
-                                    <li>Reduced re-renders via keyed reconciliation; improved scroll smoothness.</li>
-                                </ul>
-                                <ul data-lang="zh">
-                                    <li>设计了组件层级结构与页面间导航模型。</li>
-                                    <li>制定了团队统一的交互与间距规范。</li>
-                                    <li>通过 keyed 协调策略减少重渲染，提升列表滑动流畅度。</li>
-                                </ul>
-                            </div>
-                            <div class="mini">
-                                <strong data-lang="en">Reflections</strong>
-                                <strong data-lang="zh">技术反思</strong>
-                                <ul data-lang="en">
-                                    <li>Lacked a shared state layer — prop drilling between nested components added friction.</li>
-                                    <li>API contracts defined late in the project, causing frontend rework.</li>
-                                    <li>No automated UI tests; regressions caught only through manual review.</li>
-                                </ul>
-                                <ul data-lang="zh">
-                                    <li>缺乏共享状态层，嵌套组件间的属性传递增加了额外摩擦。</li>
-                                    <li>API 契约定义较晚，导致前端返工。</li>
-                                    <li>无自动化 UI 测试，回归问题只能靠人工审查发现。</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
 
-            <!-- PROJECT 4 -->
-            <article class="project">
-                <div class="project-layout">
-                    <div class="media">
-                        <div class="media-frame">
-                            <div>
-                                <p style="font-size:13px; color:var(--muted); margin:0;">
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="en">Individual Game Project</strong>
-                                    <strong style="display:block;color:var(--ink);font-size:16px;margin-bottom:8px;" data-lang="zh">个人游戏项目</strong>
-                                    <span data-lang="en">In active development · 2026</span>
-                                    <span data-lang="zh">开发中 · 2026</span>
-                                </p>
-                            </div>
+                        <div class="tag-row">
+                            <span class="tag">HarmonyOS</span>
+                            <span class="tag">ArkUI</span>
+                            <span class="tag">SpringBoot</span>
+                            <span class="tag">Frontend Performance</span>
+                            <span class="tag green">Teamwork</span>
                         </div>
-                        <div class="tech-highlight">
-                            <strong data-lang="en">Design Focus</strong>
-                            <strong data-lang="zh">设计重点</strong>
-                            <span data-lang="en">A complete vertical slice — playable start to finish — with polished UI, audio integration, and a technical write-up covering architecture decisions and playtesting iteration.</span>
-                            <span data-lang="zh">一个可从头玩到底的完整 vertical slice，包含精修 UI、音频集成与涵盖架构决策和 playtesting 迭代的技术写作。</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-top">
-                            <div>
-                                <h3 data-lang="en">Individual Game Project · WM9M6</h3>
-                                <h3 data-lang="zh">个人游戏项目 · WM9M6</h3>
-                                <div class="role" data-lang="en">In Development · Warwick MSc Coursework</div>
-                                <div class="role" data-lang="zh">开发中 · 华威硕士课程作品</div>
-                            </div>
-                            <div class="date">2026</div>
-                        </div>
-                        <div class="quick-tags">
-                            <span class="tag">Game Design</span><span class="tag">Technical Design</span><span class="tag">Playtesting</span><span class="tag">GitHub</span>
-                        </div>
-                        <p class="project-summary" data-lang="en">A complete game or polished vertical slice developed for the WM9M6 module, informed by the critical review technology direction. Will include full source, executable, development diary, and playtesting notes.</p>
-                        <p class="project-summary" data-lang="zh">为 WM9M6 模块开发的完整游戏或精修 vertical slice，基于 Critical Review 确定的技术方向。将包含完整源码、可执行文件、开发日志与 playtesting 记录。</p>
+
+                        <p class="project-summary" data-lang="en">
+                            A Xiaohongshu-style campus social application built with HarmonyOS ArkUI and SpringBoot. I worked on frontend interface design, interaction standards and rendering-performance optimisation.
+                        </p>
+                        <p class="project-summary" data-lang="zh">
+                            使用 HarmonyOS ArkUI + SpringBoot 开发类小红书风格校园社交应用，参与前端界面设计、交互规范与渲染性能优化。
+                        </p>
+
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Design Scope</strong>
-                                <strong data-lang="zh">设计范围</strong>
+                                <strong data-lang="en">Technical Work</strong>
+                                <strong data-lang="zh">技术实现</strong>
                                 <ul data-lang="en">
-                                    <li>Core mechanic, win condition, and narrative premise.</li>
-                                    <li>Art direction and audio style choices.</li>
-                                    <li>Playtesting feedback loop with documented iterations.</li>
+                                    <li>Built frontend interface structures and interaction flows.</li>
+                                    <li>Reduced unnecessary re-rendering.</li>
+                                    <li>Improved list scrolling smoothness.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>核心机制、胜利条件与叙事前提。</li>
-                                    <li>美术方向与音频风格选择。</li>
-                                    <li>有文档记录的 playtesting 反馈迭代。</li>
+                                    <li>搭建前端界面结构与交互流程。</li>
+                                    <li>减少不必要的重复渲染。</li>
+                                    <li>提升列表滑动流畅度。</li>
                                 </ul>
                             </div>
+
                             <div class="mini">
-                                <strong data-lang="en">Technical Scope</strong>
-                                <strong data-lang="zh">技术范围</strong>
+                                <strong data-lang="en">Project Value</strong>
+                                <strong data-lang="zh">项目价值</strong>
                                 <ul data-lang="en">
-                                    <li>Architecture, game loop, and scene management.</li>
-                                    <li>AI, graphics or physics implementation depending on genre.</li>
-                                    <li>Debugging approach and GitHub source history.</li>
+                                    <li>Demonstrates UI implementation in a mobile ecosystem.</li>
+                                    <li>Shows practical frontend optimisation awareness.</li>
+                                    <li>Reflects team collaboration and product-oriented development.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>架构、游戏循环与场景管理。</li>
-                                    <li>根据游戏类型选择 AI、图形或物理实现。</li>
-                                    <li>调试方法与 GitHub 源码提交历史。</li>
+                                    <li>体现移动端生态下的 UI 实现能力。</li>
+                                    <li>展示实际前端性能优化意识。</li>
+                                    <li>体现团队协作与产品导向开发经验。</li>
                                 </ul>
                             </div>
                         </div>
@@ -1110,175 +955,114 @@
             </article>
         </section>
 
-        <!-- CV EVIDENCE -->
-        <section class="section container" id="cv">
+        <section class="section container" id="profile">
             <div class="section-head">
-                <h2 data-lang="en">CV Evidence</h2>
-                <h2 data-lang="zh">CV 技能对照</h2>
-                <p data-lang="en">How each CV claim maps to project evidence — source code, screenshots, and technical notes.</p>
-                <p data-lang="zh">CV 中每项能力与项目证据的对应关系——源码、截图与技术说明。</p>
+                <h2 data-lang="en">Professional Profile</h2>
+                <h2 data-lang="zh">个人简介</h2>
+                <p data-lang="en">Software engineering foundation with game engineering specialisation, combining technical implementation, visual interaction and project delivery.</p>
+                <p data-lang="zh">以软件工程为基础，聚焦游戏工程方向，结合技术实现、视觉交互与项目交付能力。</p>
             </div>
 
-            <div class="grid-2">
+            <div class="grid-3">
                 <article class="card">
-                    <h3 data-lang="en">Technical Skills in Evidence</h3>
-                    <h3 data-lang="zh">已有项目支撑的技术能力</h3>
-                    <p data-lang="en">Core and job-relevant skills demonstrated by the projects above, not only listed.</p>
-                    <p data-lang="zh">以下技能均有上方项目与源码支撑，而非仅列技能名称。</p>
-                    <div class="quick-tags">
-                        <span class="tag">C++</span><span class="tag">UE5</span><span class="tag">DX11 / DX12</span><span class="tag">Gameplay Systems</span><span class="tag">UI</span><span class="tag">Raytracing</span><span class="tag">Pathtracing</span><span class="tag">DXR</span><span class="tag">Multithreading</span><span class="tag">Databases</span><span class="tag">Audio</span>
-                    </div>
+                    <h3 data-lang="en">Engineering</h3>
+                    <h3 data-lang="zh">工程实现</h3>
+                    <p data-lang="en">Experience in C++, data structures, game loops, scene logic, system debugging and source-code organisation.</p>
+                    <p data-lang="zh">具备 C++、数据结构、游戏循环、场景逻辑、系统调试与源码组织经验。</p>
                 </article>
-                <article class="card">
-                    <h3 data-lang="en">Collaboration & Communication</h3>
-                    <h3 data-lang="zh">协作与沟通能力</h3>
-                    <p data-lang="en">Demonstrated through team projects, internship engineering work, and academic presentations.</p>
-                    <p data-lang="zh">通过团队项目、实习工程工作与学术展示体现。</p>
-                    <div class="quick-tags">
-                        <span class="tag green">Interpersonal Skills</span><span class="tag green">Group Work</span><span class="tag green">Leadership</span><span class="tag green">Multicultural</span><span class="tag green">Presentation</span><span class="tag green">Research Environment</span>
-                    </div>
-                </article>
-            </div>
 
-            <div class="checklist">
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">CV downloadable</b><b data-lang="zh">CV 可下载</b><br><span data-lang="en">PDF linked in the navigation bar, kept current.</span><span data-lang="zh">PDF 链接在导航栏，持续保持更新。</span></div></div>
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Source code linked</b><b data-lang="zh">源码已链接</b><br><span data-lang="en">GitHub repositories attached to each technical project.</span><span data-lang="zh">每个技术项目均附 GitHub 仓库链接。</span></div></div>
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Claims backed by evidence</b><b data-lang="zh">能力有据可查</b><br><span data-lang="en">Each skill is supported by project code, architecture notes or reflections.</span><span data-lang="zh">每项技能均由项目代码、架构说明或技术反思支撑。</span></div></div>
-                <div class="check-item"><span class="dot">✓</span><div><b data-lang="en">Bilingual</b><b data-lang="zh">双语支持</b><br><span data-lang="en">Full English and Chinese versions throughout — toggle in the nav.</span><span data-lang="zh">全站英中双语，通过导航栏切换。</span></div></div>
+                <article class="card">
+                    <h3 data-lang="en">Game Development</h3>
+                    <h3 data-lang="zh">游戏开发</h3>
+                    <p data-lang="en">Practical work in player controls, enemy behaviour, collision, UI feedback, level modes and progression systems.</p>
+                    <p data-lang="zh">实践内容包括玩家控制、敌人行为、碰撞、UI 反馈、关卡模式与成长系统。</p>
+                </article>
+
+                <article class="card">
+                    <h3 data-lang="en">Collaboration</h3>
+                    <h3 data-lang="zh">团队协作</h3>
+                    <p data-lang="en">Team project experience in frontend development, interaction standards, performance optimisation and product-oriented delivery.</p>
+                    <p data-lang="zh">拥有前端开发、交互规范、性能优化与产品导向交付的团队项目经验。</p>
+                </article>
             </div>
         </section>
 
-        <!-- SKILLS -->
         <section class="section container" id="skills">
             <div class="section-head">
                 <h2 data-lang="en">Technical Skills</h2>
                 <h2 data-lang="zh">技术技能</h2>
-                <p data-lang="en">An overview of the technical areas demonstrated by portfolio projects.</p>
-                <p data-lang="zh">以下技能与上方项目内容相互对应。</p>
+                <p data-lang="en">Core skills used across portfolio projects and software engineering work.</p>
+                <p data-lang="zh">以下是我在作品集项目与软件工程实践中使用的核心技能。</p>
             </div>
+
             <div class="skills-wrap">
                 <div class="skill-card">
                     <h3 data-lang="en">Programming</h3>
                     <h3 data-lang="zh">编程语言</h3>
-                    <div class="quick-tags"><span class="tag">C++</span><span class="tag">C</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div>
+                    <div class="tag-row">
+                        <span class="tag">C++</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
                 </div>
+
                 <div class="skill-card">
-                    <h3 data-lang="en">Graphics / Game Tech</h3>
-                    <h3 data-lang="zh">图形 / 游戏技术</h3>
-                    <div class="quick-tags"><span class="tag">DirectX 12</span><span class="tag">OpenGL</span><span class="tag">Gameplay Systems</span><span class="tag">Raytracing</span></div>
+                    <h3 data-lang="en">Game / Graphics</h3>
+                    <h3 data-lang="zh">游戏 / 图形</h3>
+                    <div class="tag-row">
+                        <span class="tag">DirectX 12</span>
+                        <span class="tag">OpenGL</span>
+                        <span class="tag">UE5</span>
+                        <span class="tag">Gameplay Systems</span>
+                        <span class="tag">Raytracing</span>
+                    </div>
                 </div>
+
                 <div class="skill-card">
                     <h3 data-lang="en">Frontend / Mobile</h3>
                     <h3 data-lang="zh">前端 / 移动端</h3>
-                    <div class="quick-tags"><span class="tag">HarmonyOS</span><span class="tag">ArkUI</span><span class="tag">WeChat Mini Program</span><span class="tag">SpringBoot</span></div>
+                    <div class="tag-row">
+                        <span class="tag">HarmonyOS</span>
+                        <span class="tag">ArkUI</span>
+                        <span class="tag">WeChat Mini Program</span>
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag">UI</span>
+                    </div>
                 </div>
+
                 <div class="skill-card">
                     <h3 data-lang="en">Robotics / AI</h3>
                     <h3 data-lang="zh">机器人 / AI</h3>
-                    <div class="quick-tags"><span class="tag">ROS</span><span class="tag">SLAM</span><span class="tag">LiDAR</span><span class="tag">Machine Learning</span></div>
+                    <div class="tag-row">
+                        <span class="tag">ROS</span>
+                        <span class="tag">SLAM</span>
+                        <span class="tag">LiDAR</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE -->
         <section class="section container" id="experience">
             <div class="section-head">
                 <h2 data-lang="en">Experience</h2>
                 <h2 data-lang="zh">实习经历</h2>
-                <p data-lang="en">Robotics engineering experience that deepens my C++ foundation beyond game coursework.</p>
-                <p data-lang="zh">机器人工程实习经历，进一步巩固了我在课程之外的 C++ 实践能力。</p>
+                <p data-lang="en">Technical development experience beyond game coursework.</p>
+                <p data-lang="zh">课程项目之外的技术开发经验。</p>
             </div>
+
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3 data-lang="en">R&D Engineer Intern · Nanjing Fulmoth Intelligent Technology</h3>
-                    <h3 data-lang="zh">南京福尔摩斯智能科技有限公司 · 研发工程师实习</h3>
-                    <div class="date">2024.09 — 2025.03 · Nanjing</div>
-                    <div class="quick-tags" style="margin-top:10px;"><span class="tag">ROS</span><span class="tag">SLAM</span><span class="tag">LiDAR</span><span class="tag">C++</span></div>
-                    <p data-lang="en">Developed and tested mobile robot motion-control code in C++, fused encoder odometry with LiDAR SLAM outputs to improve localisation robustness, and ran SLAM benchmarks to identify and address performance bottlenecks.</p>
-                    <p data-lang="zh">使用 C++ 编写并测试移动机器人运动控制代码，融合编码器里程计与激光雷达 SLAM 输出以提升定位鲁棒性，并运行 SLAM 基准测试以定位并解决性能瓶颈。</p>
+                    <h3 data-lang="en">R&D Engineer Intern · Nanjing Fulmoth Intelligent Technology Co., Ltd.</h3>
+                    <h3 data-lang="zh">南京福尔摩斯智能科技有限公司 · 研发工程师</h3>
+                    <p data-lang="en">2024.09 — 2025.03 · Nanjing</p>
+                    <p data-lang="zh">2024.09 — 2025.03 · 南京</p>
+                    <p data-lang="en">Developed and tested mobile robot motion-control code, integrated encoder data with LiDAR SLAM outputs, and carried out SLAM benchmarking and optimisation.</p>
+                    <p data-lang="zh">负责编写与测试移动机器人运动控制代码，利用编码器数据与激光雷达 SLAM 融合，并进行 SLAM 基准测试与优化。</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- ROADMAP -->
-        <section class="section container" id="roadmap">
-            <div class="section-head">
-                <h2 data-lang="en">Next Steps</h2>
-                <h2 data-lang="zh">下一步计划</h2>
-                <p data-lang="en">Planned additions to the portfolio as coursework and personal projects reach completion.</p>
-                <p data-lang="zh">随课程与个人项目推进，计划加入以下内容。</p>
-            </div>
-            <div class="grid-3">
-                <article class="card">
-                    <h3 data-lang="en">Graphics Renders</h3>
-                    <h3 data-lang="zh">图形渲染截图</h3>
-                    <ul data-lang="en">
-                        <li>High-quality renders from the Computer Graphics module.</li>
-                        <li>Ray-traced scenes from Advanced Computer Graphics.</li>
-                        <li>Side-by-side comparisons showing technique differences.</li>
-                    </ul>
-                    <ul data-lang="zh">
-                        <li>Computer Graphics 模块的高质量渲染图。</li>
-                        <li>Advanced Computer Graphics 的光追渲染场景。</li>
-                        <li>展示技术差异的前后对比图。</li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3 data-lang="en">Course Projects</h3>
-                    <h3 data-lang="zh">课程项目</h3>
-                    <ul data-lang="en">
-                        <li>PFA game project with source and playthrough video.</li>
-                        <li>Games Engineering UI and rasterizer work.</li>
-                        <li>UE5 project with Blueprint and C++ breakdown.</li>
-                    </ul>
-                    <ul data-lang="zh">
-                        <li>PFA 游戏项目，附源码与通关视频。</li>
-                        <li>Games Engineering 的 UI 与光栅化器作业。</li>
-                        <li>UE5 项目，附 Blueprint 与 C++ 拆解说明。</li>
-                    </ul>
-                </article>
-                <article class="card">
-                    <h3 data-lang="en">Deliverables</h3>
-                    <h3 data-lang="zh">交付物</h3>
-                    <ul data-lang="en">
-                        <li>Technical report PDFs with images and architecture diagrams.</li>
-                        <li>Gameplay summary videos for each major project.</li>
-                        <li>Downloadable executables alongside source links.</li>
-                    </ul>
-                    <ul data-lang="zh">
-                        <li>带图与架构图的技术报告 PDF。</li>
-                        <li>每个主要项目的 Gameplay 总结视频。</li>
-                        <li>可下载可执行文件与源码链接并列展示。</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section class="section container" id="education">
-            <div class="section-head">
-                <h2 data-lang="en">Education & Awards</h2>
-                <h2 data-lang="zh">教育背景与奖项</h2>
-                <p data-lang="en">Software engineering and game engineering academic background.</p>
-                <p data-lang="zh">软件工程与游戏工程方向的学习背景。</p>
-            </div>
-            <div class="grid-3">
-                <article class="card">
-                    <h3>Nanjing University</h3>
-                    <p data-lang="en">BSc Software Engineering · School of Software · 2021–2025</p>
-                    <p data-lang="zh">软件工程 · 本科 · 软件学院 · 2021–2025</p>
-                </article>
-                <article class="card">
-                    <h3>University of Warwick</h3>
-                    <p data-lang="en">MSc Game Engineering · WMG · United Kingdom · 2025–2026</p>
-                    <p data-lang="zh">游戏工程 · 硕士 · WMG · 英国 · 2025–2026</p>
-                </article>
-                <article class="card">
-                    <h3 data-lang="en">Awards</h3>
-                    <h3 data-lang="zh">奖项</h3>
-                    <p data-lang="en">Mathematical Contest in Modeling: S Award. IELTS 7.0.</p>
-                    <p data-lang="zh">美国大学生建模竞赛 S 奖；雅思 7.0。</p>
-                </article>
             </div>
         </section>
     </main>
@@ -1288,10 +1072,6 @@
             <div>
                 <strong data-lang="en">Yang Qianqi · Game Engineering Portfolio</strong>
                 <strong data-lang="zh">杨千琪 · 游戏工程作品集</strong>
-                <div style="margin-top:6px;">
-                    <span data-lang="en" style="color:var(--muted);">MSc Game Engineering · University of Warwick · 2025–2026</span>
-                    <span data-lang="zh" style="color:var(--muted);">游戏工程硕士 · 华威大学 · 2025–2026</span>
-                </div>
             </div>
             <div>
                 <a href="mailto:2700yqq@gmail.com">2700yqq@gmail.com</a><br />
