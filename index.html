@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yang Qianqi | Pixel Game Portfolio</title>
-    <meta name="description" content="Yang Qianqi's pixel-style game engineering portfolio: C++, DirectX 12, gameplay systems, UI systems, robotics and software engineering projects." />
+    <title>Qianqi Yang | Pixel Game Portfolio</title>
+    <meta name="description" content="Qianqi Yang's pixel-style game engineering portfolio: C++, DirectX 12, gameplay systems, UI systems, robotics and software engineering projects." />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+        @font-face {
+            font-family: "PixelSC";
+            src: url("assets/fonts/zpix.woff2") format("woff2");
+            font-display: swap;
+        }
 
         :root {
             --bg: #0b1022;
@@ -57,7 +63,7 @@
                 inset: 0;
                 pointer-events: none;
                 z-index: 999;
-                background: repeating-linear-gradient( to bottom, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 4px );
+                background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 4px);
                 mix-blend-mode: soft-light;
                 opacity: 0.38;
             }
@@ -76,6 +82,130 @@
             font-family: "Press Start 2P", Consolas, monospace;
             line-height: 1.55;
         }
+
+        /* =============================================
+           中文像素字体：全局覆盖
+           当 body.zh 时，所有文字使用 PixelSC
+           ============================================= */
+
+        /* 1. 基础正文字体替换 */
+        body.zh {
+            font-family: "PixelSC", "VT323", Consolas, monospace;
+        }
+
+            /* 2. 所有使用 Press Start 2P 的元素，在中文模式下换成 PixelSC */
+            body.zh .pixel-font,
+            body.zh .eyebrow,
+            body.zh .name-en,
+            body.zh .btn,
+            body.zh button,
+            body.zh .window-titlebar,
+            body.zh .player-meta h2,
+            body.zh .section-head h2,
+            body.zh .card h3,
+            body.zh .skill-card h3,
+            body.zh .mini strong,
+            body.zh .timeline-item h3,
+            body.zh .media-title,
+            body.zh .slot strong,
+            body.zh .brand-text strong {
+                font-family: "PixelSC", "Press Start 2P", Consolas, monospace !important;
+                letter-spacing: 0.06em;
+            }
+
+            /* 3. project h3 单独处理（原代码已有规则，加强版） */
+            body.zh .project h3 {
+                font-family: "PixelSC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif !important;
+                font-size: clamp(22px, 2.2vw, 30px) !important;
+                line-height: 1.5 !important;
+                letter-spacing: 0.04em !important;
+                font-weight: 700 !important;
+                color: var(--ink);
+                text-shadow: 3px 3px 0 #000;
+                -webkit-font-smoothing: none;
+                font-smooth: never;
+            }
+
+            /* 4. 中文模式下中文字体大小微调，保证像素字体可读 */
+            body.zh .hero-desc,
+            body.zh .section-head p,
+            body.zh .project-summary {
+                font-family: "PixelSC", "VT323", Consolas, monospace;
+                font-size: 21px;
+                line-height: 1.85;
+                letter-spacing: 0.06em;
+            }
+
+            body.zh .mini ul,
+            body.zh .timeline-item p,
+            body.zh .card p,
+            body.zh .skill-card p,
+            body.zh .media-frame p,
+            body.zh .media-note,
+            body.zh .player-meta p {
+                font-family: "PixelSC", "VT323", Consolas, monospace;
+                font-size: 19px;
+                line-height: 1.85;
+                letter-spacing: 0.04em;
+            }
+
+            body.zh .tag {
+                font-family: "PixelSC", "VT323", Consolas, monospace;
+                font-size: 15px;
+                letter-spacing: 0.04em;
+            }
+
+            body.zh .date,
+            body.zh .role {
+                font-family: "PixelSC", "VT323", Consolas, monospace;
+                font-size: 17px;
+                line-height: 1.6;
+                letter-spacing: 0.04em;
+            }
+
+            body.zh .btn,
+            body.zh button {
+                font-size: 13px;
+                letter-spacing: 0.06em;
+            }
+
+            /* 5. name-cn 保留 VT323/PixelSC 混合（非 Press Start 2P） */
+            body.zh .name-cn {
+                font-family: "PixelSC", "VT323", Consolas, monospace;
+                letter-spacing: 0.2em;
+            }
+
+            /* 6. footer 中文 */
+            body.zh footer {
+                font-family: "PixelSC", "VT323", Consolas, monospace;
+                letter-spacing: 0.04em;
+            }
+
+            body.zh .eyebrow {
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                line-height: 2;
+            }
+
+            body.zh .section-head h2 {
+                font-size: clamp(24px, 3vw, 34px);
+            }
+
+            body.zh .media-title {
+                font-family: "PixelSC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif !important;
+                font-size: clamp(19px, 1.8vw, 24px) !important;
+                line-height: 1.55 !important;
+                letter-spacing: 0.06em !important;
+                font-weight: 700 !important;
+                color: var(--green);
+                text-shadow: 3px 3px 0 #000;
+                -webkit-font-smoothing: none;
+                font-smooth: never;
+            }
+
+        /* =============================================
+           以下为原始样式（未改动部分）
+           ============================================= */
 
         .topbar {
             position: sticky;
@@ -116,6 +246,7 @@
             color: var(--blue);
             font-size: 13px;
             letter-spacing: 0.04em;
+            font-family: "Press Start 2P", Consolas, monospace;
         }
 
         .brand-text span {
@@ -160,8 +291,7 @@
             flex-wrap: wrap;
         }
 
-        .btn,
-        button {
+        .btn, button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -178,8 +308,7 @@
             transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease;
         }
 
-            .btn:hover,
-            button:hover {
+            .btn:hover, button:hover {
                 transform: translate(3px, 3px);
                 box-shadow: 2px 2px 0 #000;
                 background: #32366d;
@@ -471,16 +600,14 @@
             gap: 16px;
         }
 
-        .card,
-        .skill-card {
+        .card, .skill-card {
             border: 5px solid #000;
             background: var(--panel);
             box-shadow: var(--shadow);
             padding: 18px;
         }
 
-            .card h3,
-            .skill-card h3 {
+            .card h3, .skill-card h3 {
                 margin: 0 0 12px;
                 color: var(--blue);
                 font-family: "Press Start 2P", Consolas, monospace;
@@ -488,8 +615,7 @@
                 line-height: 1.6;
             }
 
-            .card p,
-            .skill-card p {
+            .card p, .skill-card p {
                 margin: 0;
                 color: var(--muted);
                 font-size: 23px;
@@ -572,8 +698,7 @@
             line-height: 1.6;
         }
 
-        .media-frame p,
-        .media-note {
+        .media-frame p, .media-note {
             margin: 0;
             color: var(--muted);
             font-size: 22px;
@@ -714,6 +839,7 @@
             flex-wrap: wrap;
         }
 
+        /* 语言显示控制 */
         body:not(.zh) [data-lang="zh"] {
             display: none !important;
         }
@@ -727,9 +853,7 @@
         }
 
         @media (max-width: 980px) {
-            .hero,
-            .section-head,
-            .project-layout {
+            .hero, .section-head, .project-layout {
                 grid-template-columns: 1fr;
             }
 
@@ -738,9 +862,7 @@
                 border-bottom: 5px solid #000;
             }
 
-            .grid-3,
-            .skills-wrap,
-            .inventory {
+            .grid-3, .skills-wrap, .inventory {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -759,13 +881,7 @@
                 font-size: 21px;
             }
 
-            .grid-3,
-            .grid-2,
-            .skills-wrap,
-            .detail-grid,
-            .status-row,
-            .inventory,
-            .avatar-panel {
+            .grid-3, .grid-2, .skills-wrap, .detail-grid, .status-row, .inventory, .avatar-panel {
                 grid-template-columns: 1fr;
             }
 
@@ -794,7 +910,7 @@
             <a class="brand" href="#home">
                 <span class="brand-icon"></span>
                 <span class="brand-text">
-                    <strong>YANG QIANQI</strong>
+                    <strong>QIANQI YANG</strong>
                     <span>Game Engineering Portfolio</span>
                 </span>
             </a>
@@ -822,7 +938,7 @@
                 <div class="eyebrow" data-lang="zh">C++ · 游戏工程 · 技术向玩法开发</div>
 
                 <h1 class="hero-name">
-                    <span class="name-en">Yang Qianqi</span>
+                    <span class="name-en">Qianqi Yang</span>
                     <span class="name-cn">杨千琪</span>
                 </h1>
 
@@ -920,7 +1036,7 @@
                         <div class="media-frame">
                             <div>
                                 <div class="media-title" data-lang="en">SKYFIRE UPRISING L1</div>
-                                <div class="media-title" data-lang="zh">SKYFIRE UPRISING 第一关</div>
+                                <div class="media-title" data-lang="zh">SKYFIRE UPRISING L1</div>
                                 <p data-lang="en">UE5 · Procedural city · Vehicle HUD · Arena events</p>
                                 <p data-lang="zh">UE5 · 程序化城市 · 车辆 HUD · 竞技场事件</p>
                             </div>
@@ -934,8 +1050,8 @@
                             <div>
                                 <h3 data-lang="en">SkyFire Uprising Level 1</h3>
                                 <h3 data-lang="zh">SkyFire Uprising 第一关</h3>
-                                <div class="role" data-lang="en">Game Programmer · UE5 / C++ · City Generation & UI</div>
-                                <div class="role" data-lang="zh">游戏程序 · UE5 / C++ · 城市生成与 UI</div>
+                                <div class="role" data-lang="en">Team Project · My Role: City Generation & UI Programmer</div>
+                                <div class="role" data-lang="zh">团队项目</div>
                             </div>
                             <div class="date">2026.05</div>
                         </div>
@@ -944,44 +1060,43 @@
                             <span class="tag">Unreal Engine 5</span>
                             <span class="tag">C++</span>
                             <span class="tag">PCG</span>
-                            <span class="tag">Spline Mesh</span>
                             <span class="tag blue">UMG UI</span>
                             <span class="tag green">Vehicle HUD</span>
                         </div>
 
-                        <p class="project-summary" data-lang="en">An action vehicle level where the player drives through a procedurally generated city while responding to an ongoing attack sequence. My main work focused on the city generation system, arena activation flow, intro tutorial and vehicle HUD.</p>
-                        <p class="project-summary" data-lang="zh">一个动作载具关卡，玩家需要在持续袭击中驾驶穿越程序化生成的城市。我主要负责城市生成系统、竞技场触发流程、开场教程与车辆 HUD。</p>
+                        <p class="project-summary" data-lang="en">A team-developed action vehicle level where the player drives through a procedurally generated city during an attack sequence. Within the group project, I focused on procedural city generation, arena activation flow, intro tutorial UI and vehicle HUD implementation.</p>
+                        <p class="project-summary" data-lang="zh">这是一个小组合作完成的动作载具关卡，玩家需要在袭击事件中驾驶穿越程序化生成的城市。在团队项目中，我主要负责程序化城市生成、竞技场触发流程、开场教程 UI 与车辆 HUD 实现。</p>
 
                         <div class="detail-grid">
                             <div class="mini">
-                                <strong data-lang="en">Technical Work</strong>
-                                <strong data-lang="zh">技术实现</strong>
+                                <strong data-lang="en">My Contribution</strong>
+                                <strong data-lang="zh">我的个人贡献</strong>
                                 <ul data-lang="en">
-                                    <li>Built a path-driven procedural city generator with roads, sidewalks, buildings, street lights and parked vehicles.</li>
-                                    <li>Used Catmull-Rom style path smoothing, USplineMeshComponent and UInstancedStaticMeshComponent for scalable level construction.</li>
-                                    <li>Implemented designer override and clear-zone systems for landmark buildings and gameplay spaces.</li>
-                                    <li>Created intro tutorial and vehicle HUD widgets using UMG, delegates and real-time gameplay data binding.</li>
+                                    <li>Designed and implemented the path-driven procedural city generator for roads, sidewalks, buildings, street lights and parked vehicles.</li>
+                                    <li>Used Catmull-Rom style path smoothing, USplineMeshComponent and UInstancedStaticMeshComponent for scalable city construction.</li>
+                                    <li>Added designer override and clear-zone systems for landmark buildings, open spaces and gameplay-critical areas.</li>
+                                    <li>Implemented the intro tutorial and vehicle HUD with UMG widgets, delegates and real-time gameplay data binding.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>构建路径驱动的程序化城市生成器，生成道路、人行道、建筑、路灯与停放车辆。</li>
-                                    <li>使用 Catmull-Rom 风格路径平滑、USplineMeshComponent 与 UInstancedStaticMeshComponent 实现可扩展关卡构建。</li>
-                                    <li>实现特殊建筑覆盖与建筑清除区，用于地标建筑和关键 gameplay 空间。</li>
-                                    <li>使用 UMG、delegate 和实时数据绑定实现开场教程与车辆 HUD。</li>
+                                    <li>设计并实现路径驱动的程序化城市生成器，生成道路、人行道、建筑、路灯与停放车辆。</li>
+                                    <li>使用 Catmull-Rom 风格路径平滑、USplineMeshComponent 与 UInstancedStaticMeshComponent 实现可扩展城市构建。</li>
+                                    <li>加入特殊建筑覆盖与建筑清除区，用于地标建筑、开阔区域和关键 gameplay 空间。</li>
+                                    <li>使用 UMG widget、delegate 与实时数据绑定实现开场教程和车辆 HUD。</li>
                                 </ul>
                             </div>
 
                             <div class="mini">
-                                <strong data-lang="en">Project Value</strong>
-                                <strong data-lang="zh">项目价值</strong>
+                                <strong data-lang="en">Team Context</strong>
+                                <strong data-lang="zh">团队项目定位</strong>
                                 <ul data-lang="en">
-                                    <li>Combines procedural content generation with manual designer control.</li>
-                                    <li>Supports a complete vehicle gameplay flow from briefing to driving and encounter events.</li>
-                                    <li>Demonstrates UE5 C++ system architecture, event-driven UI and performance-aware instancing.</li>
+                                    <li>Worked as part of a team project to deliver a playable vehicle action level.</li>
+                                    <li>My systems supported the wider level flow from briefing, city driving and attack events to arena-style encounters.</li>
+                                    <li>Focused on technical systems that connected level generation, player feedback and performance-aware rendering.</li>
                                 </ul>
                                 <ul data-lang="zh">
-                                    <li>将程序化内容生成与设计师手动控制结合。</li>
-                                    <li>支持从任务介绍、驾驶到遭遇战事件的完整载具玩法流程。</li>
-                                    <li>体现 UE5 C++ 系统架构、事件驱动 UI 与面向性能的实例化渲染思路。</li>
+                                    <li>作为小组项目成员，参与交付一个可游玩的载具动作关卡。</li>
+                                    <li>我负责的系统支撑了从任务介绍、城市驾驶、袭击事件到竞技场遭遇战的关卡流程。</li>
+                                    <li>重点完成连接关卡生成、玩家反馈与性能友好渲染的技术系统。</li>
                                 </ul>
                             </div>
                         </div>
@@ -1008,9 +1123,9 @@
                         <div class="project-top">
                             <div>
                                 <h3 data-lang="en">3D First-Person Shooter Demo</h3>
-                                <h3 data-lang="zh">3D 第一人称射击游戏 Demo</h3>
+                                <h3 data-lang="zh">3D第一人称射击游戏</h3>
                                 <div class="role" data-lang="en">Solo Developer · C++ / DirectX 12</div>
-                                <div class="role" data-lang="zh">独立开发者 · C++ / DirectX 12</div>
+                                <div class="role" data-lang="zh">独立开发 · C++ / DirectX 12</div>
                             </div>
                             <div class="date">2025.11 — 2026.03</div>
                         </div>
@@ -1306,7 +1421,7 @@
     <footer id="contact">
         <div class="container footer-grid">
             <div>
-                <strong data-lang="en">Yang Qianqi · Game Engineering Portfolio</strong>
+                <strong data-lang="en">Qianqi Yang · Game Engineering Portfolio</strong>
                 <strong data-lang="zh">杨千琪 · 游戏工程作品集</strong>
             </div>
             <div>
