@@ -315,27 +315,35 @@
             width: 116px;
             height: 116px;
             border: 5px solid #000;
+            background: linear-gradient(90deg, transparent 0 28px, #272b59 28px 34px, transparent 34px 82px, #272b59 82px 88px, transparent 88px), linear-gradient(0deg, #393f78 0 18px, transparent 18px), linear-gradient(90deg, #ffbf9b 0 36px, #ffd6b5 36px 80px, #ffbf9b 80px 116px);
             box-shadow: 5px 5px 0 #000;
-            overflow: hidden;
-            background: #1a1e40;
             position: relative;
-            flex-shrink: 0;
+            overflow: hidden;
         }
 
-            .avatar img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
+            .avatar::before {
+                content: "YQ";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 18px;
+                text-align: center;
+                font-family: "Press Start 2P", Consolas, monospace;
+                font-size: 20px;
+                color: #141936;
             }
 
             .avatar::after {
                 content: "";
                 position: absolute;
-                inset: 0;
-                box-shadow: inset 0 0 0 3px #4a467a;
-                pointer-events: none;
+                left: 30px;
+                top: 32px;
+                width: 14px;
+                height: 14px;
+                background: #111;
+                box-shadow: 42px 0 0 #111, 20px 28px 0 #ff6f61;
             }
+
         .player-meta h2 {
             margin: 0 0 8px;
             color: var(--blue);
@@ -838,15 +846,12 @@
 
                 <div class="player-card">
                     <div class="avatar-panel">
-                        <!--<div class="avatar" aria-hidden="true"></div>-->
-                        <div class="avatar photo-avatar">
-                            <img src="assets/profile.png" alt="Yang Qianqi portrait" />
-                        </div>
+                        <div class="avatar" aria-hidden="true"></div>
                         <div class="player-meta">
                             <h2 data-lang="en">Target Roles</h2>
                             <h2 data-lang="zh">目标岗位</h2>
                             <p data-lang="en">Gameplay Programmer</p>
-                            <p data-lang="zh">游戏开发工程师</p>
+                            <p data-lang="zh">玩法程序员</p>
                             <p>C++ Developer · Game Engineer</p>
                         </div>
                     </div>
@@ -908,6 +913,81 @@
                 <p data-lang="en">Selected work for game engineering, technical gameplay and C++ development roles.</p>
                 <p data-lang="zh">以下项目面向游戏工程、技术向玩法与 C++ 开发岗位展示。</p>
             </div>
+
+            <article class="project">
+                <div class="project-layout">
+                    <div class="media">
+                        <div class="media-frame">
+                            <div>
+                                <div class="media-title" data-lang="en">SKYFIRE UPRISING L1</div>
+                                <div class="media-title" data-lang="zh">SKYFIRE UPRISING 第一关</div>
+                                <p data-lang="en">UE5 · Procedural city · Vehicle HUD · Arena events</p>
+                                <p data-lang="zh">UE5 · 程序化城市 · 车辆 HUD · 竞技场事件</p>
+                            </div>
+                        </div>
+                        <div class="media-note" data-lang="en">Action vehicle level with runtime city generation, attack events and context-sensitive UI.</div>
+                        <div class="media-note" data-lang="zh">包含运行时城市生成、袭击事件与情境化 UI 的动作载具关卡。</div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-top">
+                            <div>
+                                <h3 data-lang="en">SkyFire Uprising Level 1</h3>
+                                <h3 data-lang="zh">SkyFire Uprising 第一关</h3>
+                                <div class="role" data-lang="en">Game Programmer · UE5 / C++ · City Generation & UI</div>
+                                <div class="role" data-lang="zh">游戏程序 · UE5 / C++ · 城市生成与 UI</div>
+                            </div>
+                            <div class="date">2026.05</div>
+                        </div>
+
+                        <div class="tag-row">
+                            <span class="tag">Unreal Engine 5</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">PCG</span>
+                            <span class="tag">Spline Mesh</span>
+                            <span class="tag blue">UMG UI</span>
+                            <span class="tag green">Vehicle HUD</span>
+                        </div>
+
+                        <p class="project-summary" data-lang="en">An action vehicle level where the player drives through a procedurally generated city while responding to an ongoing attack sequence. My main work focused on the city generation system, arena activation flow, intro tutorial and vehicle HUD.</p>
+                        <p class="project-summary" data-lang="zh">一个动作载具关卡，玩家需要在持续袭击中驾驶穿越程序化生成的城市。我主要负责城市生成系统、竞技场触发流程、开场教程与车辆 HUD。</p>
+
+                        <div class="detail-grid">
+                            <div class="mini">
+                                <strong data-lang="en">Technical Work</strong>
+                                <strong data-lang="zh">技术实现</strong>
+                                <ul data-lang="en">
+                                    <li>Built a path-driven procedural city generator with roads, sidewalks, buildings, street lights and parked vehicles.</li>
+                                    <li>Used Catmull-Rom style path smoothing, USplineMeshComponent and UInstancedStaticMeshComponent for scalable level construction.</li>
+                                    <li>Implemented designer override and clear-zone systems for landmark buildings and gameplay spaces.</li>
+                                    <li>Created intro tutorial and vehicle HUD widgets using UMG, delegates and real-time gameplay data binding.</li>
+                                </ul>
+                                <ul data-lang="zh">
+                                    <li>构建路径驱动的程序化城市生成器，生成道路、人行道、建筑、路灯与停放车辆。</li>
+                                    <li>使用 Catmull-Rom 风格路径平滑、USplineMeshComponent 与 UInstancedStaticMeshComponent 实现可扩展关卡构建。</li>
+                                    <li>实现特殊建筑覆盖与建筑清除区，用于地标建筑和关键 gameplay 空间。</li>
+                                    <li>使用 UMG、delegate 和实时数据绑定实现开场教程与车辆 HUD。</li>
+                                </ul>
+                            </div>
+
+                            <div class="mini">
+                                <strong data-lang="en">Project Value</strong>
+                                <strong data-lang="zh">项目价值</strong>
+                                <ul data-lang="en">
+                                    <li>Combines procedural content generation with manual designer control.</li>
+                                    <li>Supports a complete vehicle gameplay flow from briefing to driving and encounter events.</li>
+                                    <li>Demonstrates UE5 C++ system architecture, event-driven UI and performance-aware instancing.</li>
+                                </ul>
+                                <ul data-lang="zh">
+                                    <li>将程序化内容生成与设计师手动控制结合。</li>
+                                    <li>支持从任务介绍、驾驶到遭遇战事件的完整载具玩法流程。</li>
+                                    <li>体现 UE5 C++ 系统架构、事件驱动 UI 与面向性能的实例化渲染思路。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
 
             <article class="project">
                 <div class="project-layout">
